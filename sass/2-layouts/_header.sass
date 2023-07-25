@@ -23,7 +23,7 @@
             color: white
 
             i
-                color: variables.$red-color
+                color: variables.$primary-color
                 margin-left: 1rem
         
         .header-social
@@ -37,14 +37,17 @@
 
                 li
                     font-size: 1.5rem
-                    color: variables.$light-color
+                    color: variables.$white-color
                     cursor: pointer
+
+                    &:hover
+                        color: variables.$primary-color
 
         .header-form
             display: flex
             align-items: center
             justify-content: center
-            border: 2px solid variables.$light-color
+            border: 3px solid variables.$text-color
             border-radius: 99px
 
             input
@@ -59,9 +62,9 @@
                     margin-left: 1rem
             button
                 &[type="submit"]
-                    background-color: variables.$red-color
+                    background-color: variables.$primary-color
                     font-size: 1.2rem
-                    color: variables.$light-color
+                    color: variables.$white-color
                     margin: 0 auto
                     outline: none
                     border: 0px
@@ -102,8 +105,9 @@
                         display: flex
                         align-items: center
                         cursor: pointer
+                        font-size: 1.3rem
                         padding: 0 1rem
-                        border-bottom: 2px solid #363636
+                        border-bottom: 2px solid variables.$primary-color
 
                         &:hover
                             background-color: variables.$header-color
