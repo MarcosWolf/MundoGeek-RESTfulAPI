@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  background-color: #141414;
   color: #c5c5c5;
 }
 body a {
@@ -29,13 +30,12 @@ body ul {
   z-index: 9999;
 }
 .header-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 0 1.5rem;
-  width: 1200px;
 }
 .header-container .logo {
   font-size: 2rem;
@@ -43,19 +43,20 @@ body ul {
   color: white;
 }
 .header-container .logo i {
-  color: red;
+  color: #ff0000;
   margin-left: 1rem;
 }
-.header-container .nav-bar ul {
+.header-container .header-social ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 7rem;
-  column-gap: 3rem;
+  column-gap: 2rem;
 }
-.header-container .nav-bar ul li {
-  font-size: 1.3rem;
+.header-container .header-social ul li {
+  font-size: 1.5rem;
   color: #fff;
+  cursor: pointer;
 }
 .header-container .header-form {
   display: flex;
@@ -71,11 +72,11 @@ body ul {
   font-size: 1.2rem;
   border: 0px;
   height: 2rem;
-  width: 10rem;
+  width: 18rem;
   margin-left: 1rem;
 }
 .header-container .header-form button[type=submit] {
-  background: red;
+  background-color: #ff0000;
   font-size: 1.2rem;
   color: #fff;
   margin: 0 auto;
@@ -88,6 +89,40 @@ body ul {
 }
 .header-container .header-form button[type=submit] i {
   margin-left: 0.2rem;
+}
+.header .header-bottom {
+  width: 100%;
+  background-color: #0e1529;
+  z-index: 9999;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+}
+.header .header-bottom-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1.5rem;
+}
+.header .header-bottom-container .nav-bar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 3.5rem;
+  column-gap: 3rem;
+}
+.header .header-bottom-container .nav-bar ul li {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 1rem;
+  border-bottom: 2px solid #363636;
+}
+.header .header-bottom-container .nav-bar ul li:hover {
+  background-color: #172142;
 }
 
 /*# sourceMappingURL=app.css.map */

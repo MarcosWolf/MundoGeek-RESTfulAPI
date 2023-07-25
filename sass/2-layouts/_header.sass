@@ -16,7 +16,6 @@
         align-items: center
         justify-content: space-around
         padding: 0 1.5rem
-        width: 1200px
 
         .logo
             font-size: 2rem
@@ -24,21 +23,22 @@
             color: white
 
             i
-                color: red
+                color: variables.$red-color
                 margin-left: 1rem
         
-        .nav-bar
+        .header-social
 
             ul
                 display: flex
                 align-items: center
                 justify-content: space-between
                 min-height: 7rem
-                column-gap: 3rem
+                column-gap: 2rem
 
                 li
-                    font-size: 1.3rem
+                    font-size: 1.5rem
                     color: variables.$light-color
+                    cursor: pointer
 
         .header-form
             display: flex
@@ -55,11 +55,11 @@
                     font-size: 1.2rem
                     border: 0px                    
                     height: 2rem
-                    width: 10rem
+                    width: 18rem
                     margin-left: 1rem
             button
                 &[type="submit"]
-                    background: red
+                    background-color: variables.$red-color
                     font-size: 1.2rem
                     color: variables.$light-color
                     margin: 0 auto
@@ -73,4 +73,37 @@
                     i
                         margin-left: .2rem
 
-            
+    .header-bottom
+        width: 100%
+        background-color: variables.$headerBottom-color
+        z-index: 9999
+        min-height: 3rem
+        display: flex
+        align-items: center
+
+        &-container
+            @include layouts-mixins.container
+            display: flex
+            align-items: center
+            justify-content: space-around
+            padding: 0 1.5rem
+
+            .nav-bar
+
+                ul
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    min-height: 3.5rem
+                    column-gap: 3rem
+
+                    li
+                        align-self: stretch
+                        display: flex
+                        align-items: center
+                        cursor: pointer
+                        padding: 0 1rem
+                        border-bottom: 2px solid #363636
+
+                        &:hover
+                            background-color: variables.$header-color
