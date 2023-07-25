@@ -1,0 +1,76 @@
+@use './../1-base/variables'
+@use './../1-base/base-mixins'
+@use 'layouts-mixins'
+
+.header
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    background-color: variables.$header-color
+    z-index: 9999
+
+    &-container
+        @include layouts-mixins.container
+        display: flex
+        align-items: center
+        justify-content: space-around
+        padding: 0 1.5rem
+        width: 1200px
+
+        .logo
+            font-size: 2rem
+            letter-spacing: .1rem
+            color: white
+
+            i
+                color: red
+                margin-left: 1rem
+        
+        .nav-bar
+
+            ul
+                display: flex
+                align-items: center
+                justify-content: space-between
+                min-height: 7rem
+                column-gap: 3rem
+
+                li
+                    font-size: 1.3rem
+                    color: variables.$light-color
+
+        .header-form
+            display: flex
+            align-items: center
+            justify-content: center
+            border: 2px solid variables.$light-color
+            border-radius: 99px
+
+            input
+                &[type="text"]
+                    background-color: variables.$header-color
+                    outline: none
+                    color: variables.$text-color
+                    font-size: 1.2rem
+                    border: 0px                    
+                    height: 2rem
+                    width: 10rem
+                    margin-left: 1rem
+            button
+                &[type="submit"]
+                    background: red
+                    font-size: 1.2rem
+                    color: variables.$light-color
+                    margin: 0 auto
+                    outline: none
+                    border: 0px
+                    border-radius: 99px
+                    width: 8rem
+                    height: 2.5rem
+                    cursor: pointer
+
+                    i
+                        margin-left: .2rem
+
+            

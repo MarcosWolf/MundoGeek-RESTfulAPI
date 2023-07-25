@@ -1,0 +1,93 @@
+* {
+  font-family: "Roboto";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #c5c5c5;
+}
+body a {
+  color: #c5c5c5;
+  text-decoration: none;
+}
+body ul {
+  list-style: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #172142;
+  z-index: 9999;
+}
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1.5rem;
+  width: 1200px;
+}
+.header-container .logo {
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  color: white;
+}
+.header-container .logo i {
+  color: red;
+  margin-left: 1rem;
+}
+.header-container .nav-bar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 7rem;
+  column-gap: 3rem;
+}
+.header-container .nav-bar ul li {
+  font-size: 1.3rem;
+  color: #fff;
+}
+.header-container .header-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  border-radius: 99px;
+}
+.header-container .header-form input[type=text] {
+  background-color: #172142;
+  outline: none;
+  color: #c5c5c5;
+  font-size: 1.2rem;
+  border: 0px;
+  height: 2rem;
+  width: 10rem;
+  margin-left: 1rem;
+}
+.header-container .header-form button[type=submit] {
+  background: red;
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 auto;
+  outline: none;
+  border: 0px;
+  border-radius: 99px;
+  width: 8rem;
+  height: 2.5rem;
+  cursor: pointer;
+}
+.header-container .header-form button[type=submit] i {
+  margin-left: 0.2rem;
+}
+
+/*# sourceMappingURL=app.css.map */
