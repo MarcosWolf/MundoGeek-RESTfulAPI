@@ -76,8 +76,9 @@ body ul {
   font-size: 1.2rem;
   border: 0px;
   height: 2rem;
-  width: 18rem;
-  margin-left: 1rem;
+  width: 16rem;
+  margin-left: 0.5rem;
+  padding: 1rem;
 }
 .header-container .header-form button[type=submit] {
   background-color: #f73a00;
@@ -87,7 +88,7 @@ body ul {
   outline: none;
   border: 0px;
   border-radius: 99px;
-  width: 8rem;
+  width: 6rem;
   height: 2.5rem;
   cursor: pointer;
 }
@@ -192,14 +193,100 @@ body ul {
 }
 .posts .posts-container .post-card .post-img img {
   max-width: 450px;
-}
-.posts .posts-container .post-card .post-img img:hover {
   cursor: pointer;
 }
 .posts .posts-container .post-card .post-data h2 {
   font-size: 1.8rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.posts .posts-container .post-card .post-data p {
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 5rem;
+  background-color: #242038;
+  padding: 3rem 0;
+}
+@media (max-width: 425px) {
+  .footer {
+    padding: 3rem;
+  }
+}
+.footer a, .footer p {
+  color: #c5c5c5;
+}
+.footer li, .footer p {
+  margin-bottom: 1rem;
+  line-height: 1.5rem;
+}
+.footer li a:hover, .footer p a:hover {
+  color: #f73a00;
+}
+.footer i {
+  margin-right: 0.3rem;
+}
+.footer h3 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+.footer h4 {
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.footer h4 i {
+  color: #f73a00;
+  margin-left: 1rem;
+}
+.footer-top {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  pading-bottom: 3rem;
+}
+@media (max-width: 425px) {
+  .footer-top {
+    flex-direction: column;
+  }
+}
+.footer-top-about, .footer-top-categories, .footer-top-information, .footer-top-menu {
+  max-width: 25%;
+}
+@media (max-width: 425px) {
+  .footer-top-about, .footer-top-categories, .footer-top-information, .footer-top-menu {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer-bottom-payments {
+  margin-bottom: 2rem;
+}
+.footer-bottom-payments i {
+  color: #000;
+  cursor: pointer;
+  font-size: 3rem;
+  margin: 5px;
+  transition: 0.4s;
+}
+.footer-bottom-payments i:hover {
+  color: #f73a00;
 }
 
 /*# sourceMappingURL=app.css.map */
