@@ -2,26 +2,38 @@
 @use './../1-base/base-mixins'
 @use 'layouts-mixins'
 
+.post-title-separator
+    margin-top: 8rem
+
 .posts
     margin-top: 5rem
     width: 100%
 
+    .post-btn-container
+        padding: 3rem 0
+        width: 100%
+        text-align: center
+
+        .post-btn
+            text-transform: uppercase
+            font-size: 1.3rem
+            padding: .8rem 2rem
+            color: variables.$white-color
+            background-color: variables.$primary-color
+
     .posts-container
         @include layouts-mixins.container
         display: grid
-        grid-template-columns: 2fr 1fr
-
-        h1
-            font-size: 3rem
-            color:  variables.$primary-color
-            margin-bottom: 2rem
-
-        h4
-            font-size: 1.5rem
-            color: variables.$primary-color
-            margin-bottom: 2rem
+        grid-template-columns: 1.8fr 1.2fr
         
         .post-right
+            border-left: 1px solid variables.$header-color
+            padding: 0 2rem
+
+            h1
+                font-size: 2rem
+                color:  variables.$primary-color
+                margin-bottom: 2rem
 
             .post-card
                 display: flex
@@ -47,6 +59,11 @@
         
         .post-left
 
+            h1
+                font-size: 3rem
+                color:  variables.$primary-color
+                margin-bottom: 2rem
+
             .post-card
                 display: flex
                 column-gap: 2rem
@@ -55,12 +72,12 @@
 
                 .post-img
                     img
-                        max-width: 450px
+                        max-width: 400px
                         cursor: pointer
 
                 .post-data
                     h2
-                        font-size: 1.8rem
+                        font-size: 1.5rem
                         font-weight: 500
                         margin-bottom: .5rem
                         cursor: pointer
