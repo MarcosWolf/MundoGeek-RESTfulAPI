@@ -39,7 +39,7 @@ body ul {
   padding: 0 1.5rem;
 }
 .header-container .logo {
-  font-size: 2rem;
+  font-size: 1.8rem;
   letter-spacing: 0.1rem;
   color: white;
 }
@@ -76,7 +76,7 @@ body ul {
   font-size: 1.2rem;
   border: 0px;
   height: 2rem;
-  width: 16rem;
+  width: 22rem;
   margin-left: 0.5rem;
   padding: 1rem;
 }
@@ -135,7 +135,7 @@ body ul {
 }
 
 .destaques {
-  padding-top: 10rem;
+  padding-top: 8rem;
   width: 100%;
 }
 .destaques .destaques-container {
@@ -149,16 +149,19 @@ body ul {
 .destaques .destaques-container .destaques-card img {
   max-width: 600px;
   border-radius: 15px;
+  cursor: pointer;
 }
 .destaques .destaques-container .destaques-card h2 {
   color: #f73a00;
   text-transform: uppercase;
   margin-top: 1rem;
   font-size: 1.8rem;
+  cursor: pointer;
 }
 .destaques .destaques-container .destaques-card p {
   margin-top: 1rem;
   font-size: 1.8rem;
+  cursor: pointer;
 }
 
 .posts {
@@ -181,32 +184,48 @@ body ul {
   color: #f73a00;
   margin-bottom: 2rem;
 }
-.posts .posts-container .post-right {
-  border-left: 1px solid #242038;
-  padding: 0 2rem;
-}
-.posts .posts-container .post-card {
+.posts .posts-container .post-right .post-card {
   display: flex;
   column-gap: 2rem;
   margin-bottom: 3rem;
   padding: 0 3rem 0 0;
 }
-.posts .posts-container .post-card .post-img img {
+.posts .posts-container .post-right .post-card .post-img img {
+  max-width: 200px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.posts .posts-container .post-right .post-card .post-data h2 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.posts .posts-container .post-right .post-card .post-data p {
+  cursor: pointer;
+}
+.posts .posts-container .post-left .post-card {
+  display: flex;
+  column-gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 0 3rem 0 0;
+}
+.posts .posts-container .post-left .post-card .post-img img {
   max-width: 450px;
   cursor: pointer;
 }
-.posts .posts-container .post-card .post-data h2 {
+.posts .posts-container .post-left .post-card .post-data h2 {
   font-size: 1.8rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
-.posts .posts-container .post-card .post-data p {
+.posts .posts-container .post-left .post-card .post-data p {
   cursor: pointer;
 }
 
 .footer {
-  margin-top: 5rem;
+  margin-top: 8rem;
   background-color: #242038;
   padding: 3rem 0;
 }
