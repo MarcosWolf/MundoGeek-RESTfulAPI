@@ -1,0 +1,45 @@
+@use './../1-base/variables'
+@use './../1-base/base-mixins'
+@use 'layouts-mixins'
+
+.posts
+    margin-top: 5rem
+    width: 100%
+
+    .posts-container
+        @include layouts-mixins.container
+        display: grid
+        grid-template-columns: 2fr 1fr
+
+        h1
+            font-size: 3rem
+            color:  variables.$primary-color
+            margin-bottom: 2rem
+
+        h4
+            font-size: 1.5rem
+            color: variables.$primary-color
+            margin-bottom: 2rem
+        
+        .post-right
+            border-left: 1px solid variables.$header-color
+            padding: 0 2rem
+
+        .post-card
+            display: flex
+            column-gap: 2rem
+            margin-bottom: 3rem
+            padding: 0 3rem 0 0
+
+            .post-img
+                img
+                    max-width: 450px
+
+                    &:hover
+                        cursor: pointer
+
+            .post-data
+                h2
+                    font-size: 1.8rem
+                    font-weight: 500
+                    margin-bottom: .5rem

@@ -3,10 +3,11 @@
 @use 'layouts-mixins'
 
 .header
-    position: fixed
+
     top: 0
     left: 0
     width: 100%
+    height: auto
     background-color: variables.$header-color
     z-index: 9999
 
@@ -76,38 +77,40 @@
                     i
                         margin-left: .2rem
 
-    .header-bottom
-        width: 100%
-        background-color: variables.$headerBottom-color
-        z-index: 9999
-        min-height: 3rem
+.header-bottom
+    width: 100%
+    background-color: variables.$headerBottom-color
+    z-index: 9999
+    min-height: 3rem
+    display: flex
+    align-items: center
+    position: sticky
+    top: 0
+
+    &-container
+        @include layouts-mixins.container
         display: flex
         align-items: center
+        justify-content: space-around
+        padding: 0 1.5rem
 
-        &-container
-            @include layouts-mixins.container
-            display: flex
-            align-items: center
-            justify-content: space-around
-            padding: 0 1.5rem
+        .nav-bar
 
-            .nav-bar
+            ul
+                display: flex
+                align-items: center
+                justify-content: space-between
+                min-height: 3.5rem
+                column-gap: 3rem
 
-                ul
+                li
+                    align-self: stretch
                     display: flex
                     align-items: center
-                    justify-content: space-between
-                    min-height: 3.5rem
-                    column-gap: 3rem
+                    cursor: pointer
+                    font-size: 1.3rem
+                    padding: 0 1rem
+                    border-bottom: 2px solid variables.$primary-color
 
-                    li
-                        align-self: stretch
-                        display: flex
-                        align-items: center
-                        cursor: pointer
-                        font-size: 1.3rem
-                        padding: 0 1rem
-                        border-bottom: 2px solid variables.$primary-color
-
-                        &:hover
-                            background-color: variables.$header-color
+                    &:hover
+                        background-color: variables.$header-color

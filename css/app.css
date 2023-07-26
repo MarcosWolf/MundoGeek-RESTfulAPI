@@ -23,10 +23,10 @@ body ul {
 }
 
 .header {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: auto;
   background-color: #242038;
   z-index: 9999;
 }
@@ -94,15 +94,18 @@ body ul {
 .header-container .header-form button[type=submit] i {
   margin-left: 0.2rem;
 }
-.header .header-bottom {
+
+.header-bottom {
   width: 100%;
   background-color: #1d192c;
   z-index: 9999;
   min-height: 3rem;
   display: flex;
   align-items: center;
+  position: sticky;
+  top: 0;
 }
-.header .header-bottom-container {
+.header-bottom-container {
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
@@ -110,14 +113,14 @@ body ul {
   justify-content: space-around;
   padding: 0 1.5rem;
 }
-.header .header-bottom-container .nav-bar ul {
+.header-bottom-container .nav-bar ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 3.5rem;
   column-gap: 3rem;
 }
-.header .header-bottom-container .nav-bar ul li {
+.header-bottom-container .nav-bar ul li {
   align-self: stretch;
   display: flex;
   align-items: center;
@@ -126,12 +129,12 @@ body ul {
   padding: 0 1rem;
   border-bottom: 2px solid #f73a00;
 }
-.header .header-bottom-container .nav-bar ul li:hover {
+.header-bottom-container .nav-bar ul li:hover {
   background-color: #242038;
 }
 
 .destaques {
-  padding-top: 15rem;
+  padding-top: 10rem;
   width: 100%;
 }
 .destaques .destaques-container {
@@ -155,6 +158,48 @@ body ul {
 .destaques .destaques-container .destaques-card p {
   margin-top: 1rem;
   font-size: 1.8rem;
+}
+
+.posts {
+  margin-top: 5rem;
+  width: 100%;
+}
+.posts .posts-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.posts .posts-container h1 {
+  font-size: 3rem;
+  color: #f73a00;
+  margin-bottom: 2rem;
+}
+.posts .posts-container h4 {
+  font-size: 1.5rem;
+  color: #f73a00;
+  margin-bottom: 2rem;
+}
+.posts .posts-container .post-right {
+  border-left: 1px solid #242038;
+  padding: 0 2rem;
+}
+.posts .posts-container .post-card {
+  display: flex;
+  column-gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 0 3rem 0 0;
+}
+.posts .posts-container .post-card .post-img img {
+  max-width: 450px;
+}
+.posts .posts-container .post-card .post-img img:hover {
+  cursor: pointer;
+}
+.posts .posts-container .post-card .post-data h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
 }
 
 /*# sourceMappingURL=app.css.map */
