@@ -264,6 +264,20 @@ body ul {
   }
 }
 
+@media (max-width: 1029px) {
+  h1:after {
+    content: " ";
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background: #f73a00;
+    z-index: -1;
+  }
+}
+
 .posts {
   margin-top: 4rem;
   width: 100%;
@@ -281,7 +295,7 @@ body ul {
 @media (max-width: 1029px) {
   .posts .post-btn-container {
     padding: 0;
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 4rem;
   }
 }
@@ -326,9 +340,16 @@ body ul {
 }
 @media (max-width: 1029px) {
   .posts .posts-container .post-right h1 {
-    font-size: 2rem;
-    text-align: center;
+    font-size: 1.6rem;
+    padding: 0 1rem;
+    text-align: left;
+    position: relative;
   }
+}
+.posts .posts-container .post-right span {
+  z-index: 10;
+  padding: 0 1.2rem;
+  background: #151220;
 }
 .posts .posts-container .post-right .post-card {
   display: flex;
@@ -338,11 +359,13 @@ body ul {
 }
 @media (max-width: 1029px) {
   .posts .posts-container .post-right .post-card {
-    flex-direction: column;
-    align-items: center;
-    padding: 0.1rem 0;
+    padding: 0.2rem 1rem;
     margin-bottom: 0.1rem;
+    column-gap: 0;
   }
+}
+.posts .posts-container .post-right .post-card .post-img {
+  width: 60%;
 }
 .posts .posts-container .post-right .post-card .post-img img {
   max-width: 200px;
@@ -351,10 +374,13 @@ body ul {
 }
 @media (max-width: 1029px) {
   .posts .posts-container .post-right .post-card .post-img img {
+    border-radius: 15px;
     max-width: 100%;
     width: 100%;
-    border-radius: 0;
   }
+}
+.posts .posts-container .post-right .post-card .post-data {
+  width: 100%;
 }
 .posts .posts-container .post-right .post-card .post-data h2 {
   font-size: 1.2rem;
@@ -364,12 +390,11 @@ body ul {
 }
 @media (max-width: 1029px) {
   .posts .posts-container .post-right .post-card .post-data h2 {
-    text-align: center;
     font-weight: 400;
     margin-top: 0.1rem;
     padding: 0 1rem;
     margin-bottom: 2rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 .posts .posts-container .post-right .post-card .post-data p {
@@ -386,7 +411,13 @@ body ul {
     font-size: 1.6rem;
     padding: 0 1rem;
     text-align: left;
+    position: relative;
   }
+}
+.posts .posts-container .post-left h1 span {
+  z-index: 10;
+  padding: 0 1.2rem;
+  background: #151220;
 }
 .posts .posts-container .post-left .post-card {
   display: flex;
