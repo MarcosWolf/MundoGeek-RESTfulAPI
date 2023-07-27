@@ -7,7 +7,8 @@
     background-color: variables.$header-color
     padding: 3rem 0
 
-    @include base-mixins.mobile
+    @include base-mixins.mobile-only
+        margin-top: 1rem
         padding: 3rem
 
     a, p
@@ -45,13 +46,13 @@
         @include layouts-mixins.center-content
         pading-bottom: 3rem
 
-        @include base-mixins.mobile
+        @include base-mixins.mobile-only
             flex-direction: column
 
         &-about, &-categories, &-information, &-menu
             max-width: 25%
 
-            @include base-mixins.mobile
+            @include base-mixins.mobile-only
                 max-width: 100%
                 margin-bottom: 1rem
 

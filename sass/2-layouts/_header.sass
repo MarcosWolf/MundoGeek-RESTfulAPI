@@ -17,24 +17,35 @@
         justify-content: space-around
         padding: 0 1.5rem
 
-        @include base-mixins.mobile
+        @include base-mixins.mobile-only
             padding: 1rem
 
         .logo
             font-size: 1.8rem
             letter-spacing: .1rem
-            color: white
+            color: variables.$white-color
 
             i
                 color: variables.$primary-color
                 margin-left: 1rem
 
         #btnMobile
-            display: none
-            font-size: 1.5rem
+            @include base-mixins.desktop
+                display: none
 
-            @include base-mixins.mobile
+            @include base-mixins.mobile-only
                 display: block
+                font-size: 1.5rem
+                cursor: pointer
+
+        #btnSearch
+            @include base-mixins.desktop
+                display: none
+
+            @include base-mixins.mobile-only
+                display: block
+                font-size: 1.5rem
+                cursor: pointer
         
         .header-social
 
@@ -53,7 +64,7 @@
                     &:hover
                         color: variables.$primary-color
 
-            @include base-mixins.mobile
+            @include base-mixins.mobile-only
                 display: none
 
         .header-form
@@ -63,7 +74,7 @@
             border: 3px solid variables.$text-color
             border-radius: 99px
             
-            @include base-mixins.mobile
+            @include base-mixins.mobile-only
                 display: none
 
             input
@@ -103,7 +114,7 @@
     position: sticky
     top: 0
 
-    @include base-mixins.mobile
+    @include base-mixins.mobile-only
         display: none
 
     &-container
