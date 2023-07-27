@@ -1,4 +1,4 @@
 # Mundo Geek
 Projeto para portfólio em desenvolvimento
 
-![Layout atual](https://github.com/MarcosWolf/mundogeek/assets/26293082/7c4b6ea1-4909-47e9-bbbe-3130e8317547)
+![image](https://github.com/MarcosWolf/mundogeek/assets/26293082/f3ed8d4d-7199-4de9-9dd2-53386f2a8621)
