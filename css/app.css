@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: 0.4s;
 }
 
 html {
@@ -212,6 +211,7 @@ body ul {
   .destaques .destaques-container .destaques-card img {
     max-width: 760px;
     height: auto;
+    cursor: pointer;
   }
 }
 @media (max-width: 1029px) {
@@ -239,6 +239,7 @@ body ul {
   .destaques .destaques-container .destaques-card p {
     font-size: 1.4rem;
     padding: 0 1rem;
+    margin-top: 0.2rem;
     cursor: pointer;
   }
 }
@@ -252,8 +253,10 @@ body ul {
   }
 }
 
-.post-title-separator {
-  margin-top: 8rem;
+@media (min-width: 1030px) {
+  .post-title-separator {
+    margin-top: 8rem;
+  }
 }
 @media (max-width: 1029px) {
   .post-title-separator {
@@ -299,10 +302,12 @@ body ul {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.8fr 1.2fr;
+  padding: 0 1rem;
 }
 @media (max-width: 1029px) {
   .posts .posts-container {
     grid-template-columns: 1fr;
+    padding: 0;
   }
 }
 .posts .posts-container .post-right {
@@ -378,8 +383,9 @@ body ul {
 }
 @media (max-width: 1029px) {
   .posts .posts-container .post-left h1 {
-    font-size: 2rem;
-    text-align: center;
+    font-size: 1.6rem;
+    padding: 0 1rem;
+    text-align: left;
   }
 }
 .posts .posts-container .post-left .post-card {
@@ -390,11 +396,13 @@ body ul {
 }
 @media (max-width: 1029px) {
   .posts .posts-container .post-left .post-card {
-    flex-direction: column;
-    align-items: center;
-    padding: 0.1rem 0;
+    padding: 0.2rem 1rem;
     margin-bottom: 0.1rem;
+    column-gap: 0;
   }
+}
+.posts .posts-container .post-left .post-card .post-img {
+  width: 60%;
 }
 .posts .posts-container .post-left .post-card .post-img img {
   max-width: 400px;
@@ -402,9 +410,13 @@ body ul {
 }
 @media (max-width: 1029px) {
   .posts .posts-container .post-left .post-card .post-img img {
+    border-radius: 15px;
     max-width: 100%;
     width: 100%;
   }
+}
+.posts .posts-container .post-left .post-card .post-data {
+  width: 100%;
 }
 .posts .posts-container .post-left .post-card .post-data h2 {
   font-size: 1.5rem;
@@ -414,12 +426,11 @@ body ul {
 }
 @media (max-width: 1029px) {
   .posts .posts-container .post-left .post-card .post-data h2 {
-    text-align: center;
     font-weight: 400;
     margin-top: 0.1rem;
     padding: 0 1rem;
     margin-bottom: 2rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 .posts .posts-container .post-left .post-card .post-data p {

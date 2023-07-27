@@ -3,7 +3,8 @@
 @use 'layouts-mixins'
 
 .post-title-separator
-    margin-top: 8rem
+    @include base-mixins.desktop
+        margin-top: 8rem
 
     @include base-mixins.mobile-only
         margin-top: 1rem
@@ -39,9 +40,12 @@
         @include layouts-mixins.container
         display: grid
         grid-template-columns: 1.8fr 1.2fr
+        padding: 0 1rem
 
         @include base-mixins.mobile-only
             grid-template-columns: 1fr
+            padding: 0
+            
         
         .post-right
             border-left: 1px solid variables.$header-color
@@ -108,8 +112,9 @@
                 margin-bottom: 2rem
 
                 @include base-mixins.mobile-only
-                    font-size: 2rem
-                    text-align: center
+                    font-size: 1.6rem
+                    padding: 0 1rem
+                    text-align: left
 
             .post-card
                 display: flex
@@ -118,21 +123,27 @@
                 padding: 0 3rem 0 0
 
                 @include base-mixins.mobile-only
-                    flex-direction: column
-                    align-items: center
-                    padding: .1rem 0
+                    //flex-direction: column
+                    //align-items: center
+                    padding: .2rem 1rem
                     margin-bottom: .1rem
+                    column-gap: 0
 
                 .post-img
+                    width: 60%
+                    
                     img
                         max-width: 400px
                         cursor: pointer
 
                         @include base-mixins.mobile-only
+                            border-radius: 15px
                             max-width: 100%
                             width: 100%
 
                 .post-data
+                    width: 100%
+
                     h2
                         font-size: 1.5rem
                         font-weight: 500
@@ -140,12 +151,11 @@
                         cursor: pointer
 
                         @include base-mixins.mobile-only
-                            text-align: center
                             font-weight: 400
                             margin-top: .1rem
                             padding: 0 1rem
                             margin-bottom: 2rem
-                            font-size: 1.2rem
+                            font-size: 1rem                            
 
                     p
                         cursor: pointer
