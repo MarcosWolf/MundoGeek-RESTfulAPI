@@ -38,6 +38,11 @@ body ul {
   justify-content: space-around;
   padding: 0 1.5rem;
 }
+@media (max-width: 425px) {
+  .header-container {
+    padding: 1rem;
+  }
+}
 .header-container .logo {
   font-size: 1.8rem;
   letter-spacing: 0.1rem;
@@ -46,6 +51,15 @@ body ul {
 .header-container .logo i {
   color: #f73a00;
   margin-left: 1rem;
+}
+.header-container #btnMobile {
+  display: none;
+  font-size: 1.5rem;
+}
+@media (max-width: 425px) {
+  .header-container #btnMobile {
+    display: block;
+  }
 }
 .header-container .header-social ul {
   display: flex;
@@ -62,12 +76,22 @@ body ul {
 .header-container .header-social ul li:hover {
   color: #f73a00;
 }
+@media (max-width: 425px) {
+  .header-container .header-social {
+    display: none;
+  }
+}
 .header-container .header-form {
   display: flex;
   align-items: center;
   justify-content: center;
   border: 3px solid #c5c5c5;
   border-radius: 99px;
+}
+@media (max-width: 425px) {
+  .header-container .header-form {
+    display: none;
+  }
 }
 .header-container .header-form input[type=text] {
   background-color: #242038;
@@ -106,6 +130,11 @@ body ul {
   position: sticky;
   top: 0;
 }
+@media (max-width: 425px) {
+  .header-bottom {
+    display: none;
+  }
+}
 .header-bottom-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -138,6 +167,11 @@ body ul {
   padding-top: 8rem;
   width: 100%;
 }
+@media (max-width: 425px) {
+  .destaques {
+    padding-top: 4rem;
+  }
+}
 .destaques .destaques-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -145,10 +179,22 @@ body ul {
   justify-content: space-around;
   column-gap: 5rem;
 }
+@media (max-width: 425px) {
+  .destaques .destaques-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .destaques .destaques-container .destaques-card img {
   max-width: 600px;
   border-radius: 15px;
   cursor: pointer;
+}
+@media (max-width: 425px) {
+  .destaques .destaques-container .destaques-card img {
+    border-radius: 0;
+    width: 100%;
+  }
 }
 .destaques .destaques-container .destaques-card h2 {
   color: #f73a00;
@@ -157,24 +203,55 @@ body ul {
   font-size: 1.8rem;
   cursor: pointer;
 }
+@media (max-width: 425px) {
+  .destaques .destaques-container .destaques-card h2 {
+    display: none;
+  }
+}
 .destaques .destaques-container .destaques-card p {
   margin-top: 1rem;
   font-size: 1.8rem;
   cursor: pointer;
 }
+@media (max-width: 425px) {
+  .destaques .destaques-container .destaques-card p {
+    text-align: center;
+    margin-top: 0.1rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+  }
+}
 
 .post-title-separator {
   margin-top: 8rem;
+}
+@media (max-width: 425px) {
+  .post-title-separator {
+    margin-top: 4rem;
+  }
 }
 
 .posts {
   margin-top: 5rem;
   width: 100%;
 }
+@media (max-width: 425px) {
+  .posts {
+    margin-top: 1rem;
+  }
+}
 .posts .post-btn-container {
   padding: 3rem 0;
   width: 100%;
   text-align: center;
+}
+@media (max-width: 425px) {
+  .posts .post-btn-container {
+    padding: 0;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+  }
 }
 .posts .post-btn-container .post-btn {
   text-transform: uppercase;
@@ -183,20 +260,35 @@ body ul {
   color: #fff;
   background-color: #f73a00;
 }
+@media (max-width: 425px) {
+  .posts .post-btn-container .post-btn {
+    font-size: 0.8rem;
+  }
+}
 .posts .posts-container {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1.8fr 1.2fr;
 }
+@media (max-width: 425px) {
+  .posts .posts-container {
+    grid-template-columns: 1fr;
+  }
+}
 .posts .posts-container .post-right {
   border-left: 1px solid #242038;
-  padding: 0 2rem;
 }
 .posts .posts-container .post-right h1 {
   font-size: 2rem;
   color: #f73a00;
   margin-bottom: 2rem;
+}
+@media (max-width: 425px) {
+  .posts .posts-container .post-right h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
 }
 .posts .posts-container .post-right .post-card {
   display: flex;
@@ -204,10 +296,25 @@ body ul {
   margin-bottom: 3rem;
   padding: 0 3rem 0 0;
 }
+@media (max-width: 425px) {
+  .posts .posts-container .post-right .post-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.1rem 0;
+    margin-bottom: 0.1rem;
+  }
+}
 .posts .posts-container .post-right .post-card .post-img img {
   max-width: 200px;
   border-radius: 25px;
   cursor: pointer;
+}
+@media (max-width: 425px) {
+  .posts .posts-container .post-right .post-card .post-img img {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0;
+  }
 }
 .posts .posts-container .post-right .post-card .post-data h2 {
   font-size: 1.2rem;
@@ -215,13 +322,30 @@ body ul {
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
+@media (max-width: 425px) {
+  .posts .posts-container .post-right .post-card .post-data h2 {
+    text-align: center;
+    font-weight: 400;
+    margin-top: 0.1rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+  }
+}
 .posts .posts-container .post-right .post-card .post-data p {
   cursor: pointer;
+  display: none;
 }
 .posts .posts-container .post-left h1 {
   font-size: 3rem;
   color: #f73a00;
   margin-bottom: 2rem;
+}
+@media (max-width: 425px) {
+  .posts .posts-container .post-left h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
 }
 .posts .posts-container .post-left .post-card {
   display: flex;
@@ -229,9 +353,23 @@ body ul {
   margin-bottom: 3rem;
   padding: 0 3rem 0 0;
 }
+@media (max-width: 425px) {
+  .posts .posts-container .post-left .post-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.1rem 0;
+    margin-bottom: 0.1rem;
+  }
+}
 .posts .posts-container .post-left .post-card .post-img img {
   max-width: 400px;
   cursor: pointer;
+}
+@media (max-width: 425px) {
+  .posts .posts-container .post-left .post-card .post-img img {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 .posts .posts-container .post-left .post-card .post-data h2 {
   font-size: 1.5rem;
@@ -239,8 +377,23 @@ body ul {
   margin-bottom: 0.5rem;
   cursor: pointer;
 }
+@media (max-width: 425px) {
+  .posts .posts-container .post-left .post-card .post-data h2 {
+    text-align: center;
+    font-weight: 400;
+    margin-top: 0.1rem;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+  }
+}
 .posts .posts-container .post-left .post-card .post-data p {
   cursor: pointer;
+}
+@media (max-width: 425px) {
+  .posts .posts-container .post-left .post-card .post-data p {
+    display: none;
+  }
 }
 
 .footer {

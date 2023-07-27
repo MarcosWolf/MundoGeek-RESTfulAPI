@@ -3,7 +3,6 @@
 @use 'layouts-mixins'
 
 .header
-
     top: 0
     left: 0
     width: 100%
@@ -18,6 +17,9 @@
         justify-content: space-around
         padding: 0 1.5rem
 
+        @include base-mixins.mobile
+            padding: 1rem
+
         .logo
             font-size: 1.8rem
             letter-spacing: .1rem
@@ -26,6 +28,13 @@
             i
                 color: variables.$primary-color
                 margin-left: 1rem
+
+        #btnMobile
+            display: none
+            font-size: 1.5rem
+
+            @include base-mixins.mobile
+                display: block
         
         .header-social
 
@@ -44,12 +53,18 @@
                     &:hover
                         color: variables.$primary-color
 
+            @include base-mixins.mobile
+                display: none
+
         .header-form
             display: flex
             align-items: center
             justify-content: center
             border: 3px solid variables.$text-color
             border-radius: 99px
+            
+            @include base-mixins.mobile
+                display: none
 
             input
                 &[type="text"]
@@ -87,6 +102,9 @@
     align-items: center
     position: sticky
     top: 0
+
+    @include base-mixins.mobile
+        display: none
 
     &-container
         @include layouts-mixins.container
