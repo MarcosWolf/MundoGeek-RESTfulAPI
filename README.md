@@ -98,12 +98,15 @@
    ## 🐺 Autor
 
    <a href="https://www.marcoswolf.com.br/">
-    <img src="http://marcoswolf.com.br/img/portraitmobile.jpg" alt=""/>
-    <br />
+    <img style="width:100px" src="http://marcoswolf.com.br/img/portraitmobile.jpg" alt=""/>
+    <br />    
    </a>
-   
-   <a href="mailto:contato@marcoswolf.com.br"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
-   <a href="https://www.linkedin.com/in/marcoswolf/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+   Marcos Vinícios
+
+   <div>
+   	<a href="mailto:contato@marcoswolf.com.br"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+   	<a href="https://www.linkedin.com/in/marcoswolf/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+   </div>
 </div>
 
 ---
