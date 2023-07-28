@@ -1,9 +1,4 @@
-import React, { ReactElement } from 'react';
-
-interface Props {
-}
-
-function HeaderBottom(): ReactElement {
+function HeaderBottom() {
     return(
         <div>
             <div id="header" className="header-bottom">

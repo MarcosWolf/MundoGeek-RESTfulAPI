@@ -1,10 +1,5 @@
-import React, { ReactElement } from 'react';
-
-interface Props {
-}
-
-function Highlights(): ReactElement {
-    return(
+function Highlights() {
+    return (
         <div>
             <div className="destaques">
                 <div className="destaques-container">

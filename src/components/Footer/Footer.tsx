@@ -1,9 +1,4 @@
-import React, { ReactElement } from 'react';
-
-interface Props {
-}
-
-function Footer(): ReactElement {
+function Footer() {
     return (
         <div>
             <footer className="footer">

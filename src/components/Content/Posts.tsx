@@ -1,9 +1,4 @@
-import React, { ReactElement } from 'react';
-
-interface Props {
-}
-
-function Posts(): ReactElement {
+function Posts() {
     return (
         <div>
             <div className="posts">
