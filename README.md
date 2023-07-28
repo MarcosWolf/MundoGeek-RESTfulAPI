@@ -55,6 +55,13 @@
   <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/62097666-df9d-43b3-8143-01ef5f3041cb" width="200px">
 </p>
 
+  ## Web
+
+<p align="center">
+  <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/8a70fd40-0da8-4d93-a905-a25191c99e53" width="400px">
+</p>
+
+
 </div>
 
 <div id="demonstracao">
