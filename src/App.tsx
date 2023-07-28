@@ -1,11 +1,9 @@
-import './app.sass';
+import './sass/app.sass';
 
-function App() {
+export const App = () => {
   return (
     <div>
-      <h1>Iniciando projeto com react</h1>
+      
     </div>
   )
 }
-
-export default App
