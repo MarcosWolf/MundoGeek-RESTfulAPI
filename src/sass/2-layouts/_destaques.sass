@@ -1,0 +1,62 @@
+@use './../1-base/variables'
+@use './../1-base/base-mixins'
+@use 'layouts-mixins'
+
+.destaques
+    padding-top: 8rem
+    width: 100%
+
+    @include base-mixins.mobile-only
+        padding-top: 4rem
+
+    .destaques-container
+        display: flex
+
+        @include base-mixins.desktop
+            @include layouts-mixins.container
+            justify-content: space-around
+            column-gap: 5rem
+
+        @include base-mixins.mobile-only
+            flex-direction: column
+
+        .destaques-card            
+            img
+                display: block
+                width: 100%
+                padding: 0 1rem                
+
+                @include base-mixins.desktop
+                    max-width: 760px
+                    height: auto
+                    cursor: pointer
+
+                @include base-mixins.mobile-only
+                    width: 100%
+                    padding: 0 1rem
+
+            h2
+                @include base-mixins.desktop
+                    font-size: 1.8rem
+                    color: variables.$primary-color
+                    text-transform: uppercase
+                    padding: 0 1rem
+                    margin-top: 1rem
+                    cursor: pointer
+                
+                @include base-mixins.mobile-only
+                    display: none
+            
+            p
+                @include base-mixins.desktop
+                    font-size: 1.4rem
+                    padding: 0 1rem
+                    margin-top: .2rem
+                    cursor: pointer
+
+                @include base-mixins.mobile-only
+                    font-size: 1.2rem
+                    text-align: center
+                    padding: 0 1rem
+                    margin-top: .4rem
+                    margin-bottom: 2rem
