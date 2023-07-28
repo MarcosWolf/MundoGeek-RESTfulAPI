@@ -1,4 +1,4 @@
-![Arte-Projeto Geek](https://github.com/MarcosWolf/mundogeek/assets/26293082/24eeecc4-0345-4201-8b62-e43063f837c4)
+![Arte-Projeto Geek](https://github.com/MarcosWolf/mundogeek/assets/26293082/c2ed2d97-ba06-4615-8aca-a6eb4c48fc47)
 
 <p align="center">
  <a href="#objetivo">Objetivo</a> • 
@@ -51,6 +51,7 @@
    - HTML5
    - [Sass](https://sass-lang.com)
    - [React](https://pt-br.reactjs.org/)
+   - [Vite](https://vitejs.dev/)
    - [TypeScript](https://www.typescriptlang.org/)
 
 </div>
