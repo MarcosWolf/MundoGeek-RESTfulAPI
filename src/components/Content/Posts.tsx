@@ -1,3 +1,5 @@
+import DataPosts from "../Data/DataPosts";
+
 function Posts() {
     return (
         <div>
@@ -7,45 +9,7 @@ function Posts() {
                     <div className="post-left">
                         <h1><span>Últimas notícias</span></h1>
 
-                        <div className="post-card">
-                            <div className="post-img"><img src="./img/posts/post1.jpg" /></div>
-                            <div className="post-data">
-                                <h2>Sea of Stars: o RPG mais aguardado do ano?</h2>
-                                <p>25/07/2023</p>
-                            </div>
-                        </div>
-
-                        <div className="post-card">
-                            <div className="post-img"><img src="./img/posts/post2.jpg" /></div>
-                            <div className="post-data">
-                                <h2>Futurama chegou ao FORTNITE nesta quarta-feira</h2>
-                                <p>26/07/2023</p>
-                            </div>
-                        </div>
-
-                        <div className="post-card">
-                            <div className="post-img"><img src="./img/posts/post3.jpg" /></div>
-                            <div className="post-data">
-                                <h2>Confira o gameplay novo de ARMORED CORE VI</h2>
-                                <p>25/07/2023</p>
-                            </div>
-                        </div>
-
-                        <div className="post-card">
-                            <div className="post-img"><img src="./img/posts/post4.jpg" /></div>
-                            <div className="post-data">
-                                <h2>Sonic Superstars: Mais detalhes sobre os poderes das Esmeraldas</h2>
-                                <p>25/07/2023</p>
-                            </div>
-                        </div>
-
-                        <div className="post-card">
-                            <div className="post-img"><img src="./img/posts/post5.jpg" /></div>
-                            <div className="post-data">
-                                <h2>Confira nossa análise sobre a 2ª temporada de Jujutsu Kaisen</h2>
-                                <p>25/07/2023</p>
-                            </div>
-                        </div>
+                        <DataPosts />
 
                         <div className="post-btn-container">
                             <a href="#" className="post-btn">Veja mais notícias</a>

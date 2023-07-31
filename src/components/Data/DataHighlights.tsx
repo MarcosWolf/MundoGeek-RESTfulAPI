@@ -33,7 +33,7 @@ const DataHighlights:React.FC = () => {
         <>
             {
                 highlights.length > 0 && highlights.map( highlight => (
-                    <div className="destaques-card">
+                    <div className="destaques-card" key={highlight.id}>
                         <a href={highlight.url}><img src={highlight.img} /></a>
                         <h2>{highlight.area}</h2>
                         <a href={highlight.url}><p>{highlight.title}</p></a>
