@@ -1,4 +1,5 @@
 import DataPosts from "../Data/DataPosts";
+import DataTopComments from "../Data/DataTopComments";
 
 function Posts() {
     return (
@@ -19,45 +20,7 @@ function Posts() {
                     <div className="post-right">
                         <h1><span>As mais comentadas</span></h1>
 
-                        <div className="post-card">
-                            <div className="post-img"><img src="./img/maiscomentadas/card1.jpg" /></div>
-                            <div className="post-data">
-                                <h2>Futurama chegou ao FORTNITE nesta quarta-feira</h2>
-                                <p>há 3 horas</p>
-                            </div>
-                        </div>
-
-                        <div className="post-card">
-                            <div className="post-img"><img src="./img/maiscomentadas/card2.jpg" /></div>
-                            <div className="post-data">
-                                <h2>Seleção com as melhores dicas para ELDEN RING</h2>
-                                <p>há 1 semana</p>
-                            </div>
-                        </div>
-
-                        <div className="post-card">
-                            <div className="post-img"><img src="./img/maiscomentadas/card3.jpg" /></div>
-                            <div className="post-data">
-                                <h2>Call of Duty Modern Warfare 3 tem artes vazadas</h2>
-                                <p>há 3 dias</p>
-                            </div>
-                        </div>
-
-                        <div className="post-card">
-                            <div className="post-img"><img src="./img/maiscomentadas/card4.jpg" /></div>
-                            <div className="post-data">
-                                <h2>Imsoniac estaria trabalhando em um novo projeto não anunciado</h2>
-                                <p>há 4 dias</p>
-                            </div>
-                        </div>
-
-                        <div className="post-card">
-                            <div className="post-img"><img src="./img/maiscomentadas/card5.jpg" /></div>
-                            <div className="post-data">
-                                <h2>Cyberpunk 2077: Phantom Liberty ganha edição de colecionador</h2>
-                                <p>há 3 dias</p>
-                            </div>
-                        </div>
+                        <DataTopComments />
 
                         <h1 className="post-title-separator"><span>Últimos reviews</span></h1>
 
