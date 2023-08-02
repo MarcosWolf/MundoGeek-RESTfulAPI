@@ -1,4 +1,4 @@
-import DataPosts from "../Data/DataPosts";
+import DataLastNews from "../Data/DataLastNews";
 import DataTopComments from "../Data/DataTopComments";
 import DataLastReviews from "../Data/DataLastReviews";
 
@@ -11,7 +11,7 @@ function Posts() {
                     <div className="post-left">
                         <h1><span>Últimas notícias</span></h1>
 
-                        <DataPosts />
+                        <DataLastNews />
 
                         <div className="post-btn-container">
                             <a href="#" className="post-btn">Veja mais notícias</a>

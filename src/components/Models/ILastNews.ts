@@ -1,4 +1,4 @@
-export interface IPosts {
+export interface ILastNews {
     "id": number;
     "title": string;
     "date": string;

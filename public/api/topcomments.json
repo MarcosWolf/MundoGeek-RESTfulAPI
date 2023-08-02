@@ -3,30 +3,30 @@
         "id": 0,
         "title": "Futurama chegou ao FORTNITE nesta quarta-feira",
         "img": "img/maiscomentadas/card1.jpg",
-        "url": "/noticia/"
+        "url": "/noticia/11"
     },
     {
         "id": 1,
         "title": "Seleção com as melhores dicas para ELDEN RING",
         "img": "img/maiscomentadas/card2.jpg",
-        "url": "/noticia/"
+        "url": "/noticia/4"
     },
     {
         "id": 2,
         "title": "Call of Duty Modern Warfare 3 tem artes vazadas",
         "img": "img/maiscomentadas/card3.jpg",
-        "url": "/noticia/"
+        "url": "/noticia/3"
     },
     {
         "id": 3,
         "title": "Imsoniac estaria trabalhando em um novo projeto não anunciado",
         "img": "img/maiscomentadas/card4.jpg",
-        "url": "/noticia/"
+        "url": "/noticia/2"
     },
     {
         "id": 4,
         "title": "Cyberpunk 2077: Phantom Liberty ganha edição de colecionador",
         "img": "img/maiscomentadas/card5.jpg",
-        "url": "/noticia/"
+        "url": "/noticia/1"
     }
 ]
