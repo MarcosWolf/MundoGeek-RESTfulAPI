@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Header() {
     return (
         <div>
@@ -5,7 +7,7 @@ function Header() {
                 <div className="header-container">
                     <i id="btnMobile" className="fas fa-bars"></i>
 
-                    <a href="/" className="logo">Mundo . Geek<i className="fa-solid fa-glasses"></i></a>
+                    <Link to="/"><div className="logo">Mundo . Geek<i className="fa-solid fa-glasses"></i></div></Link>
 
                     <i id="btnSearch" className="fa-solid fa-magnifying-glass"></i>
 

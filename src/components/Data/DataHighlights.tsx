@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import { IHighlights } from "../Models/IHighlights";
 import { HighlightsServices } from "../Services/HighlightsServices";
+import { Link } from "react-router-dom";
 
 interface IState {
     loading: boolean,
@@ -34,9 +35,9 @@ const DataHighlights:React.FC = () => {
             {
                 highlights.length > 0 && highlights.map( highlight => (
                     <div className="destaques-card" key={highlight.id}>
-                        <a href={highlight.url}><img src={highlight.img} /></a>
+                        <Link to={highlight.url}><img src={highlight.img} /></Link>
                         <h2>{highlight.area}</h2>
-                        <a href={highlight.url}><p>{highlight.title}</p></a>
+                        <Link to={highlight.url}><p>{highlight.title}</p></Link>
                     </div>
                 ))
             }

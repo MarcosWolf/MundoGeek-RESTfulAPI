@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import { ILastReviews } from "../Models/ILastReviews";
 import { LastReviewsServices } from "../Services/LastReviewsServices";
+import { Link } from "react-router-dom";
 
 interface IState {
     loading: boolean,
@@ -35,9 +36,9 @@ const DataLastReviews:React.FC = () => {
                 lastReviews.length > 0 && lastReviews.map( lastReview => (
                     <div className="post-card">
                         <div className="post-img">
-                            <a href={lastReview.url}><img src={lastReview.img} /></a></div>
+                            <Link to={lastReview.url}><img src={lastReview.img} /></Link></div>
                         <div className="post-data">
-                            <h2><a href={lastReview.url}>{lastReview.title}</a></h2>
+                            <Link to={lastReview.url}><h2>{lastReview.title}</h2></Link>
                         </div>
                     </div>
                 ))

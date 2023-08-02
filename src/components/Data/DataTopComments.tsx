@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import { ITopComments } from "../Models/ITopComments";
 import { TopCommentsServices } from "../Services/TopCommentsServices";
+import { Link } from 'react-router-dom';
 
 interface IState {
     loading: boolean,
@@ -35,9 +36,10 @@ const DataTopComments:React.FC = () => {
                 topComments.length > 0 && topComments.map( topComment => (
                     <div className="post-card">
                         <div className="post-img">
-                            <a href={topComment.url}><img src={topComment.img} /></a></div>
+                            <Link to={topComment.url}><img src={topComment.img} /></Link>
+                        </div>
                         <div className="post-data">
-                            <h2><a href={topComment.url}>{topComment.title}</a></h2>
+                            <Link to={topComment.url}><h2>{topComment.title}</h2></Link>
                         </div>
                     </div>
                 ))
