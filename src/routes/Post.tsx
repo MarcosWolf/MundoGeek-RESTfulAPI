@@ -1,13 +1,18 @@
+import { useParams } from "react-router-dom";
+
 const Post = () => {
+    const { id } = useParams();
+
     return (
         <>
-            <h1>Post</h1>
-            <h1>Post</h1>
-            <h1>Post</h1>
-            <h1>Post</h1>
-            <h1>Post</h1>
-            <h1>Post</h1>
-            <h1>Post</h1>
+            <h1>Post {id}</h1>
+            <h1>Post {id}</h1>
+            <h1>Post {id}</h1>
+            <h1>Post {id}</h1>
+            <h1>Post {id}</h1>
+            <h1>Post {id}</h1>
+            <h1>Post {id}</h1>
+            <h1>Post {id}</h1>
         </>
     );
 }
