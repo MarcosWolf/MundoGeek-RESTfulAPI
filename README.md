@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center"> 
-	🚧  Blog - Em Desenvolvimento 🚧
+	🚧  Blog 🚧
 </h4>
 
 <p align="center">
@@ -37,7 +37,7 @@
 - [x] Construção do Layout
 - [x] Responsividade
 - [x] Portabilidade para React
-- [ ] Interatividade com TypeScript
+- [x] Interatividade com TypeScript
 
 </div>
 
