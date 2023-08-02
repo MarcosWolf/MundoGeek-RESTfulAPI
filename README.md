@@ -37,7 +37,7 @@
 - [x] Construção do Layout
 - [x] Responsividade
 - [x] Portabilidade para React
-- [x] Interatividade com TypeScript
+- [ ] Interatividade com TypeScript
 
 </div>
 
@@ -98,7 +98,7 @@
    ## 🐺 Autor
 
    <a href="https://www.marcoswolf.com.br/">
-    <img style="width:100px" src="http://marcoswolf.com.br/img/portraitmobile.jpg" alt=""/>
+    <img style="width:100px" src="https://avatars.githubusercontent.com/u/26293082?v=4" alt=""/>
     <br />    
    </a>
    Marcos Vinícios
