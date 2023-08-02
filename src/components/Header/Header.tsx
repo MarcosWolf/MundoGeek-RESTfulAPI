@@ -5,7 +5,7 @@ function Header() {
                 <div className="header-container">
                     <i id="btnMobile" className="fas fa-bars"></i>
 
-                    <a href="#" className="logo">Mundo . Geek<i className="fa-solid fa-glasses"></i></a>
+                    <a href="/" className="logo">Mundo . Geek<i className="fa-solid fa-glasses"></i></a>
 
                     <i id="btnSearch" className="fa-solid fa-magnifying-glass"></i>
 
