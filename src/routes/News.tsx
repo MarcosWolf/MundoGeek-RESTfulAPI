@@ -2,7 +2,7 @@ import Post from "../components/Content/Post";
 
 import { useParams } from "react-router-dom";
 
-const Review = () => {
+const News = () => {
     const { id } = useParams();
 
     return (
@@ -12,4 +12,4 @@ const Review = () => {
     );
 }
 
-export default Review;
+export default News;

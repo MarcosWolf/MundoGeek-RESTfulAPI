@@ -1,11 +1,11 @@
 import Highlights from './../components/Content/Highlights';
-import Posts from './../components/Content/Posts';
+import News from '../components/Content/News';
 
 const Home = () => {
     return (
         <>
             <Highlights />
-            <Posts />
+            <News />
         </>
     );
 }

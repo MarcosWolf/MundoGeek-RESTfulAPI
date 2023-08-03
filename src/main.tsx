@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 
 import Home from "./routes/Home";
-import Post from "./routes/Post";
+import News from "./routes/News";
 import Review from "./routes/Review";
 import ErrorPage from './routes/ErrorPage';
 
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/noticia/:id",
-        element: <Post />,
+        element: <News />,
       },
       {
         path: "/review/:id",

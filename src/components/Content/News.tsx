@@ -2,7 +2,7 @@ import DataLastNews from "../Data/DataLastNews";
 import DataTopComments from "../Data/DataTopComments";
 import DataLastReviews from "../Data/DataLastReviews";
 
-function Posts() {
+function News() {
     return (
         <div>
             <div className="posts">
@@ -33,4 +33,4 @@ function Posts() {
     );
 }
 
-export default Posts
+export default News
