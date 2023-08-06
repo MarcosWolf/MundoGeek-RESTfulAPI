@@ -1,6 +1,7 @@
 {
   "name": "mundogeek",
   "private": true,
+  "homepage": "https://mundogeek.marcoswolf.com.br",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
