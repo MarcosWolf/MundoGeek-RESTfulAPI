@@ -38,6 +38,7 @@
 - [x] Responsividade
 - [x] Portabilidade para React
 - [ ] Interatividade com TypeScript
+- [ ] Banco de Dados MySQL
 
 </div>
 
@@ -69,7 +70,7 @@
    ## 🚀 Demonstração
 
    Você pode visualizar o projeto através deste link: <br/>
-   <a href="https://mundogeek-dusky.vercel.app">https://mundogeek-dusky.vercel.app</a>
+   <a href="https://mundogeek.marcoswolf.com.br">https://mundogeek.marcoswolf.com.br</a>
    
 </div>
 
