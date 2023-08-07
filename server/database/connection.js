@@ -11,16 +11,8 @@ const db = mysql.createPool({
 
 db.getConnection((err, con) => 
 {
-    try
-    {
-        if (con)
-        {
-            console.log("Conectado em " + process.env.DB_HOST + " com sucesso");
-        }
-    }
-    catch (err)
-    {
-        console.log(`Error: ${err}`);
+    if (err) {
+        console.log(`MySQL error: ${err}`);
     }
 });
 
