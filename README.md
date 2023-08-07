@@ -87,6 +87,9 @@
    - [React](https://pt-br.reactjs.org/)
    - [Vite](https://vitejs.dev/)
    - [TypeScript](https://www.typescriptlang.org/)
+   - [Node.js](https://nodejs.org)
+   - [Express](https://expressjs.com)
+   - [MySQL](https://mysql.com)
 
 </div>
 
