@@ -37,8 +37,9 @@
 - [x] Construção do Layout
 - [x] Responsividade
 - [x] Portabilidade para React
-- [ ] Interatividade com TypeScript
-- [ ] Banco de Dados MySQL
+- [x] Interatividade com TypeScript
+- [ ] Desenvolvimento do Back-end
+- [ ] Inserção do Banco de Dados MySQL
 
 </div>
 
