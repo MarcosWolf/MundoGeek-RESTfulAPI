@@ -81,12 +81,16 @@
    ## 🛠 Tecnologias
    
    As seguintes ferramentas foram usadas na construção do projeto:
+
+   ### Front-end
    
    - HTML5
    - [Sass](https://sass-lang.com)
    - [React](https://pt-br.reactjs.org/)
    - [Vite](https://vitejs.dev/)
    - [TypeScript](https://www.typescriptlang.org/)
+
+   ### Back-end
    - [Node.js](https://nodejs.org)
    - [Express](https://expressjs.com)
    - [MySQL](https://mysql.com)
