@@ -10,7 +10,8 @@ const Post = () => {
     const [listNews, setListNews] = useState();
 
     useEffect(() => {
-        Axios.get(`https://api-mundogeek.onrender.com/news/${id}`).then((response) => {
+//        Axios.get(`https://api-mundogeek.onrender.com/news/${id}`).then((response) => {
+        Axios.get(`https://192.168.0.2:3000/news/${id}`).then((response) => {
             setListNews(response.data);
             //console.log(setListNews);
         });
@@ -22,6 +23,7 @@ const Post = () => {
                 {
                     typeof listNews !== "undefined" && listNews.map(news => (
                         <div key={news.id}>
+                            <img src={news.thumbnail}/>
                             <h2>{news.title}</h2>
                             <p>{news.category}</p>
                             <p>{news.author}</p>
