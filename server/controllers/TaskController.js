@@ -11,9 +11,7 @@ class TaskController {
             } else {
                 //response.send(result);
                 console.log({result});
-                response.sendFile(`${basePath}/post.html`, {
-                    result
-                });
+                response.send(result);
             }
         });
     }
