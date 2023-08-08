@@ -1,43 +1,44 @@
 import {useState, useEffect} from "react";
-import { IHighlights } from "../Models/IHighlights";
-import { HighlightsServices } from "../Services/HighlightsServices";
 import { Link } from "react-router-dom";
+import Axios from 'axios';
+
+import { IPosts } from "../Models/IPosts";
 
 interface IState {
     loading: boolean,
-    highlights: IHighlights[],
+    getPosts: IPosts[],
     errorMsg: string
 }
 
 const DataHighlights:React.FC = () => {
     const [state, setState] = useState<IState>({
         loading: false,
-        highlights: [] as IHighlights[],
+        getPosts: [] as IPosts[],
         errorMsg: ''
     })
 
     useEffect(() => {
         setState({...state, loading: true});
 
-        HighlightsServices.getAllHighlights()
-            .then(res => setState({
-                ...state, loading:false, highlights:res.data
+        Axios.get(`https://api-mundogeek.onrender.com/highlights/`)
+            .then((response) => setState({
+                ...state, loading:false, getPosts:response.data
             }))
             .catch(err => setState({
                 ...state, loading:false, errorMsg:err.message
             }));
     },[]);
 
-    const {highlights} = state;
+    const {getPosts} = state;
 
     return (
         <>
             {
-                highlights.length > 0 && highlights.map( highlight => (
-                    <div className="destaques-card" key={highlight.id}>
-                        <Link to={highlight.url}><img src={highlight.img} /></Link>
-                        <h2>{highlight.area}</h2>
-                        <Link to={highlight.url}><p>{highlight.title}</p></Link>
+                getPosts.length > 0 && getPosts.map( post => (
+                    <div className="destaques-card" key={post.id}>
+                        <Link to={"post/" + post.id}><img src={post.thumbnail} /></Link>
+                        <h2>{post.category}</h2>
+                        <Link to={"post/" + post.id}><p>{post.title}</p></Link>
                     </div>
                 ))
             }
