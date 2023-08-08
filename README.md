@@ -11,7 +11,8 @@
  <a href="#funcionalidades">Funcionalidades</a> • 
  <a href="#objetivo">Layout</a> • 
  <a href="#demonstracao">Demonstração</a> • 
- <a href="#tecnologias">Tecnologias</a> • 
+ <a href="#tecnologias">Tecnologias</a> •
+ <a href="#bancodedados">Banco de Dados</a> •
  <a href="#autor">Autor</a> • 
  <a href="#licenca">Licença</a>
 </p>
@@ -32,14 +33,15 @@
 <div id="funcionalidades">
 
 ## 📝 Funcionalidades
+### Back-end
+- [x] API Restful com Node.js e Express
+- [x] Banco de Dados MySQL
 
-- [x] Prototipagem do Projeto
+### Front-end
 - [x] Construção do Layout
 - [x] Responsividade
-- [x] Portabilidade para React
-- [x] Interatividade com TypeScript
-- [ ] Desenvolvimento do Back-end
-- [ ] Inserção do Banco de Dados MySQL
+- [x] Comunicação com o Back-end 
+- [ ] Motor de busca
 
 </div>
 
@@ -96,6 +98,16 @@
    - [Express](https://expressjs.com)
    - [MySQL](https://mysql.com)
 
+</div>
+
+<br />
+
+<div id="tecnologias">
+   
+   ## 🎲 Banco de Dados
+
+   Em breve irei atualizar esta sessão. :)
+   
 </div>
 
 <br />
