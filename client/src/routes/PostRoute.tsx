@@ -1,6 +1,6 @@
 import Post from "../components/Content/Post";
 
-const News = () => {
+const PostRoute = () => {
 
     return (
         <>
@@ -9,4 +9,4 @@ const News = () => {
     );
 }
 
-export default News;
+export default PostRoute;

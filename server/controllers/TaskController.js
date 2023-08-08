@@ -3,7 +3,7 @@ const path = require("path");
 const basePath = path.join(__dirname, '../templates');
 
 class TaskController {
-    // Home
+    // Feed
     visualizarDestaques(request, response) {
         let query = `SELECT *
         FROM posts

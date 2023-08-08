@@ -4,8 +4,8 @@ function Highlights() {
 
     return (
         <div>
-            <div className="destaques">
-                <div className="destaques-container">
+            <div className="highlights">
+                <div className="highlights-container">
                     <DataHighlights />
                 </div>
             </div>

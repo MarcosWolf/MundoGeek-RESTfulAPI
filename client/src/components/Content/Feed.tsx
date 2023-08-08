@@ -2,28 +2,28 @@ import DataLastNews from "../Data/DataLastNews";
 import DataTopViews from "../Data/DataTopViews";
 import DataLastReviews from "../Data/DataLastReviews";
 
-function News() {
+function Feed() {
     return (
         <div>
-            <div className="posts">
-                <div className="posts-container">
+            <div className="feed">
+                <div className="feed-container">
 
-                    <div className="post-left">
+                    <div className="feed-left">
                         <h1><span>Últimas notícias</span></h1>
 
                         <DataLastNews />
 
-                        <div className="post-btn-container">
-                            <a href="#" className="post-btn">Veja mais notícias</a>
+                        <div className="feed-btn-container">
+                            <a href="#" className="feed-btn">Veja mais notícias</a>
                         </div>
                     </div>
                     
-                    <div className="post-right">
+                    <div className="feed-right">
                         <h1><span>As mais visualizadas</span></h1>
 
                         <DataTopViews />
 
-                        <h1 className="post-title-separator"><span>Últimos reviews</span></h1>
+                        <h1 className="feed-title-separator"><span>Últimos reviews</span></h1>
 
                         <DataLastReviews />
                     </div>
@@ -33,4 +33,4 @@ function News() {
     );
 }
 
-export default News
+export default Feed

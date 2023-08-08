@@ -2,14 +2,14 @@
 @use './../1-base/base-mixins'
 @use 'layouts-mixins'
 
-.destaques
+.highlights
     padding-top: 8rem
     width: 100%
 
     @include base-mixins.mobile-only
         padding-top: 4rem
 
-    .destaques-container
+    .highlights-container
         display: flex
 
         @include base-mixins.desktop
@@ -20,7 +20,7 @@
         @include base-mixins.mobile-only
             flex-direction: column
 
-        .destaques-card            
+        .highlights-card            
             img
                 display: block
                 width: 100%

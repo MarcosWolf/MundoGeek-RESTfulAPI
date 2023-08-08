@@ -2,7 +2,7 @@
 @use './../1-base/base-mixins'
 @use 'layouts-mixins'
 
-.post-title-separator
+.feed-title-separator
     @include base-mixins.desktop
         margin-top: 8rem
 
@@ -21,14 +21,14 @@ h1:after
         background: variables.$primary-color
         z-index: -1
 
-.posts
+.feed
     margin-top: 4rem
     width: 100%
 
     @include base-mixins.mobile-only
         margin-top: 1rem
 
-    .post-btn-container
+    .feed-btn-container
         padding: 3rem 0
         width: 100%
         text-align: center
@@ -38,7 +38,7 @@ h1:after
             margin-top: 2rem
             margin-bottom: 4rem
 
-        .post-btn
+        .feed-btn
             text-transform: uppercase
             font-size: 1.3rem
             padding: .8rem 2rem
@@ -48,7 +48,7 @@ h1:after
             @include base-mixins.mobile-only
                 font-size: .8rem
 
-    .posts-container
+    .feed-container
         @include layouts-mixins.container
         display: grid
         grid-template-columns: 1.8fr 1.2fr
@@ -59,7 +59,7 @@ h1:after
             padding: 0
             
         
-        .post-right
+        .feed-right
             border-left: 1px solid variables.$header-color
             padding: 0 2rem
 
@@ -82,7 +82,7 @@ h1:after
                 padding: 0 1.2rem
                 background: variables.$bg-color
 
-            .post-card
+            .feed-card
                 display: flex
                 column-gap: 2rem
                 margin-bottom: 3rem
@@ -93,7 +93,7 @@ h1:after
                     margin-bottom: .1rem
                     column-gap: 0
 
-                .post-img
+                .feed-img
                     width: 60%
 
                     img
@@ -106,7 +106,7 @@ h1:after
                             max-width: 100%
                             width: 100%
 
-                .post-data
+                .feed-data
                     width: 100%
 
                     h2
@@ -126,7 +126,7 @@ h1:after
                         cursor: pointer
                         display: none
         
-        .post-left
+        .feed-left
             h1
                 font-size: 3rem
                 color:  variables.$primary-color
@@ -143,7 +143,7 @@ h1:after
                     padding: 0 1.2rem
                     background: variables.$bg-color
 
-            .post-card
+            .feed-card
                 display: flex
                 column-gap: 2rem
                 margin-bottom: 3rem
@@ -156,7 +156,7 @@ h1:after
                     margin-bottom: .1rem
                     column-gap: 0
 
-                .post-img
+                .feed-img
                     width: 60%
                     
                     img
@@ -168,7 +168,7 @@ h1:after
                             max-width: 100%
                             width: 100%
 
-                .post-data
+                .feed-data
                     width: 100%
 
                     h2

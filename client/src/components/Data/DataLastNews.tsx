@@ -38,11 +38,11 @@ const DataLastNews:React.FC = () => {
         <>
             {
                 getPosts.length > 0 && getPosts.map( post => (
-                    <div className="post-card" key={post.postID}>
-                        <div className="post-img">
+                    <div className="feed-card" key={post.postID}>
+                        <div className="feed-img">
                             <Link to={"post/" + post.postID}><img src={basePath + post.postTHUMBNAIL} /></Link>
                         </div>
-                        <div className="post-data">
+                        <div className="feed-data">
                             <Link to={"post/" + post.postID}><h2>{post.postTITLE}</h2></Link>
                             <p>Data</p>
                         </div>

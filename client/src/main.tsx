@@ -6,23 +6,23 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 
-import Home from "./routes/Home";
-import News from "./routes/News";
-import ErrorPage from './routes/ErrorPage';
+import HomeRoute from "./routes/HomeRoute";
+import PostRoute from "./routes/PostRoute";
+import ErrorPageRoute from './routes/ErrorPageRoute';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <ErrorPage />,
+    errorElement: <ErrorPageRoute />,
     children: [
       {
         path: "/",
-        element: <Home />,
+        element: <HomeRoute />,
       },
       {
         path: "/post/:id",
-        element: <News />,
+        element: <PostRoute />,
       },
     ],
   },

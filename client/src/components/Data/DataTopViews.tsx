@@ -22,8 +22,8 @@ const DataTopViews:React.FC = () => {
     useEffect(() => {
         setState({...state, loading: true});
 
-        Axios.get(`http://192.168.0.2:3000/topviews/`)
-        //Axios.get(`https://api-mundogeek.onrender.com/lastreviews/`)
+        //Axios.get(`http://192.168.0.2:3000/topviews/`)
+        Axios.get(`https://api-mundogeek.onrender.com/topviews/`)
             .then(res => setState({
                 ...state, loading:false, getPosts:res.data
             }))
@@ -38,10 +38,10 @@ const DataTopViews:React.FC = () => {
         <>
             {
                 getPosts.length > 0 && getPosts.map( post => (
-                    <div className="post-card">
-                        <div className="post-img">
+                    <div className="feed-card">
+                        <div className="feed-img">
                             <Link to={"post/" + post.postID}><img src={basePath + post.postTHUMBNAIL} /></Link></div>
-                        <div className="post-data">
+                        <div className="feed-data">
                             <Link to={"post/" + post.postID}><h2>{post.postTITLE}</h2></Link>
                         </div>
                     </div>

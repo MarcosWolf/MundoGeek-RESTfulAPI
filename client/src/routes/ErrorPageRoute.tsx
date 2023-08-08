@@ -1,4 +1,4 @@
-const ErrorPage = () => {
+const ErrorPageRoute = () => {
     return (
         <>
             <h1>Erro 404</h1>
@@ -6,4 +6,4 @@ const ErrorPage = () => {
     );
 }
 
-export default ErrorPage;
+export default ErrorPageRoute;
