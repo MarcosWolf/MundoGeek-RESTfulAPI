@@ -4,5 +4,6 @@ const router = express.Router();
 const TaskController = require("../controllers/TaskController");
 
 router.get('/lastnews', TaskController.visualizarPosts);
+router.get('/news/:id', TaskController.visualizarPost);
 
 module.exports = router

@@ -15,6 +15,19 @@ class TaskController {
             }
         });
     }
+
+    visualizarPost(request, response) {
+        const  id = request.params;
+        let query = `SELECT * FROM posts WHERE id = ${id}`;
+        database.query(query, (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log({result});
+                response.send(result);
+            }
+        })
+    }
 }
 
 module.exports = new TaskController();
