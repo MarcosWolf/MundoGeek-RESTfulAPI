@@ -20,7 +20,8 @@ const DataLastReviews:React.FC = () => {
     useEffect(() => {
         setState({...state, loading: true});
 
-        Axios.get(`http://192.168.0.2:3000/lastreviews/`)
+        //Axios.get(`http://192.168.0.2:3000/lastreviews/`)
+        Axios.get(`https://api-mundogeek.onrender.com/lastreviews/`)
             .then(res => setState({
                 ...state, loading:false, getPosts:res.data
             }))
