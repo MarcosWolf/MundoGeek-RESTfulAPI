@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/c2ed2d97-ba06-4615-8aca-a6eb4c48fc47" />
+    <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/257a230c-74fb-4b2b-a444-f0a9d040dc6d" />
 </h1>
 
 <h4 align="center"> 
