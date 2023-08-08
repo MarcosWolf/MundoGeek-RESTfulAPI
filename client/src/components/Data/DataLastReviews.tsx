@@ -1,44 +1,45 @@
 import {useState, useEffect} from "react";
-import { ILastReviews } from "../Models/ILastReviews";
-import { LastReviewsServices } from "../Services/LastReviewsServices";
 import { Link } from "react-router-dom";
+import Axios from 'axios';
+
+import { IPosts } from "../Models/IPosts";
 
 interface IState {
     loading: boolean,
-    lastReviews: ILastReviews[],
+    getPosts: IPosts[],
     errorMsg: string
 }
 
 const DataLastReviews:React.FC = () => {
     const [state, setState] = useState<IState>({
         loading: false,
-        lastReviews: [] as ILastReviews[],
+        getPosts: [] as IPosts[],
         errorMsg: ''
     })
 
     useEffect(() => {
         setState({...state, loading: true});
 
-        LastReviewsServices.getAllLastReviews()
+        Axios.get(`http://192.168.0.2:3000/lastreviews/`)
             .then(res => setState({
-                ...state, loading:false, lastReviews:res.data
+                ...state, loading:false, getPosts:res.data
             }))
             .catch(err => setState({
                 ...state, loading:false, errorMsg:err.message
             }));
     },[]);
 
-    const {lastReviews} = state;
+    const {getPosts} = state;
 
     return (
         <>
             {
-                lastReviews.length > 0 && lastReviews.map( lastReview => (
+                getPosts.length > 0 && getPosts.map( post => (
                     <div className="post-card">
                         <div className="post-img">
-                            <Link to={lastReview.url}><img src={lastReview.img} /></Link></div>
+                            <Link to={"post/" + post.postID}><img src={post.postTHUMBNAIL} /></Link></div>
                         <div className="post-data">
-                            <Link to={lastReview.url}><h2>{lastReview.title}</h2></Link>
+                            <Link to={"post/" + post.postID}><h2>{post.postTITLE}</h2></Link>
                         </div>
                     </div>
                 ))

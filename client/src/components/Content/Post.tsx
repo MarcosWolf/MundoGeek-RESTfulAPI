@@ -24,7 +24,7 @@ const Post:React.FC = () => {
         setState({...state, loading: true});
 
         //Axios.get(`https://192.168.0.2:3000/${id}`)
-        Axios.get(`https://api-mundogeek.onrender.com/news/${id}`)
+        Axios.get(`https://api-mundogeek.onrender.com/post/${id}`)
             .then((response) => setState({        
                 ...state, loading:false, getPost:response.data
             }))
