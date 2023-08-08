@@ -4,7 +4,7 @@ const basePath = path.join(__dirname, '../templates');
 
 class TaskController {
     visualizarPosts(request, response) {
-        let query = "SELECT * FROM posts WHERE highlight = 0 LIMIT 0, 10";
+        let query = "SELECT * FROM posts WHERE highlight = 0 LIMIT 0, 10 ORDER BY DESC";
         database.query(query, (err, result) => {
             if (err) {
                 console.log(err);
