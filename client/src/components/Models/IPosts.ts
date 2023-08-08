@@ -1,11 +1,12 @@
 export interface IPosts {
-    "id": number;
-    "title": string;
-    "category": string;
-    "thumbnail": string;
-    "author": string;
-    "date": Date;
-    "content": string;
-    "section": string;
-    "tags": string;
+    "postID": number;
+    "postTITLE": string;
+    "postCATEGORY": string;
+    "categoryNAME": string;
+    "postTHUMBNAIL": string;
+    "postAUTHOR": string;
+    "postDATE": Date;
+    "postCONTENT": string;
+    "postSECTION": string;
+    "postTAGS": string;
 }

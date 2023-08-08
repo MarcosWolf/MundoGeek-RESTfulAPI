@@ -38,12 +38,12 @@ const Post:React.FC = () => {
         <>
             {
                 getPost.length > 0 && getPost.map(post => (
-                    <div key={post.id}>
-                        <h2>{post.title}</h2>
-                        <img src={post.thumbnail}/>
-                        <p>{post.category}</p>
-                        <p>{post.author}</p>
-                        <p>{post.content}</p>
+                    <div key={post.postID}>
+                        <h2>{post.postTITLE}</h2>
+                        <img src={post.postTHUMBNAIL}/>
+                        <p>{post.categoryNAME}</p>
+                        <p>{post.postAUTHOR}</p>
+                        <p>{post.postCONTENT}</p>
                     </div>
                 ))
             }
