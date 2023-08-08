@@ -20,6 +20,7 @@ const DataHighlights:React.FC = () => {
     useEffect(() => {
         setState({...state, loading: true});
 
+        //Axios.get(`https://192.168.0.2:3000/highlights/`)
         Axios.get(`https://api-mundogeek.onrender.com/highlights/`)
             .then((response) => setState({
                 ...state, loading:false, getPosts:response.data
