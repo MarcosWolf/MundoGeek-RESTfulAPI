@@ -1,45 +1,48 @@
 import {useState, useEffect} from "react";
-import { ITopComments } from "../Models/ITopComments";
-import { TopCommentsServices } from "../Services/TopCommentsServices";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import Axios from 'axios';
+
+import { IPosts } from "../Models/IPosts";
+
+const basePath = "/img/posts/";
 
 interface IState {
     loading: boolean,
-    topComments: ITopComments[],
+    getPosts: IPosts[],
     errorMsg: string
 }
 
-const DataTopComments:React.FC = () => {
+const DataTopViews:React.FC = () => {
     const [state, setState] = useState<IState>({
         loading: false,
-        topComments: [] as ITopComments[],
+        getPosts: [] as IPosts[],
         errorMsg: ''
     })
 
     useEffect(() => {
         setState({...state, loading: true});
 
-        TopCommentsServices.getAllTopComments()
+        Axios.get(`http://192.168.0.2:3000/topviews/`)
+        //Axios.get(`https://api-mundogeek.onrender.com/lastreviews/`)
             .then(res => setState({
-                ...state, loading:false, topComments:res.data
+                ...state, loading:false, getPosts:res.data
             }))
             .catch(err => setState({
                 ...state, loading:false, errorMsg:err.message
             }));
     },[]);
 
-    const {topComments} = state;
+    const {getPosts} = state;
 
     return (
         <>
             {
-                topComments.length > 0 && topComments.map( topComment => (
+                getPosts.length > 0 && getPosts.map( post => (
                     <div className="post-card">
                         <div className="post-img">
-                            <Link to={topComment.url}><img src={topComment.img} /></Link>
-                        </div>
+                            <Link to={"post/" + post.postID}><img src={basePath + post.postTHUMBNAIL} /></Link></div>
                         <div className="post-data">
-                            <Link to={topComment.url}><h2>{topComment.title}</h2></Link>
+                            <Link to={"post/" + post.postID}><h2>{post.postTITLE}</h2></Link>
                         </div>
                     </div>
                 ))
@@ -48,4 +51,4 @@ const DataTopComments:React.FC = () => {
     );
 }
 
-export default DataTopComments
+export default DataTopViews

@@ -4,6 +4,8 @@ import Axios from 'axios';
 
 import { IPosts } from '../Models/IPosts';
 
+const basePath = "/img/posts/";
+
 interface IState {
     loading: boolean,
     getPost: IPosts[],
@@ -41,7 +43,7 @@ const Post:React.FC = () => {
                 getPost.length > 0 && getPost.map(post => (
                     <div key={post.postID}>
                         <h2>{post.postTITLE}</h2>
-                        <img src={post.postTHUMBNAIL}/>
+                        <img src={basePath + post.postTHUMBNAIL}/>
                         <p>{post.categoryNAME}</p>
                         <p>{post.postAUTHOR}</p>
                         <p>{post.postCONTENT}</p>

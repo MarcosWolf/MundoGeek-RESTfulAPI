@@ -4,6 +4,8 @@ import Axios from 'axios';
 
 import { IPosts } from "../Models/IPosts";
 
+const basePath = "/img/posts/";
+
 interface IState {
     loading: boolean,
     getPosts: IPosts[],
@@ -38,7 +40,7 @@ const DataLastReviews:React.FC = () => {
                 getPosts.length > 0 && getPosts.map( post => (
                     <div className="post-card">
                         <div className="post-img">
-                            <Link to={"post/" + post.postID}><img src={post.postTHUMBNAIL} /></Link></div>
+                            <Link to={"post/" + post.postID}><img src={basePath + post.postTHUMBNAIL} /></Link></div>
                         <div className="post-data">
                             <Link to={"post/" + post.postID}><h2>{post.postTITLE}</h2></Link>
                         </div>

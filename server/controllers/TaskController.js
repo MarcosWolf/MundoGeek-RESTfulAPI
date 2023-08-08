@@ -40,6 +40,23 @@ class TaskController {
         });
     }
 
+    visualizarTopViews(request, response) {
+        let query = `SELECT *
+                     FROM posts
+                        INNER JOIN categories
+                        ON posts.postCATEGORY = categories.categoryID
+                    ORDER BY postID DESC
+                    LIMIT 0,5`;
+        database.query(query, (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log({result});
+                response.send(result);
+            }
+        });
+    }
+
     visualizarUltimosReviews(request, response) {
         let query = `SELECT *
                      FROM posts
@@ -47,7 +64,7 @@ class TaskController {
                         ON posts.postCATEGORY = categories.categoryID
                     WHERE postSECTION = 1
                     ORDER BY postID DESC
-                    LIMIT 0,10`;
+                    LIMIT 0,5`;
         database.query(query, (err, result) => {
             if (err) {
                 console.log(err);

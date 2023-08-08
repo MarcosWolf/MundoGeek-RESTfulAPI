@@ -1,5 +1,5 @@
 import DataLastNews from "../Data/DataLastNews";
-import DataTopComments from "../Data/DataTopComments";
+import DataTopViews from "../Data/DataTopViews";
 import DataLastReviews from "../Data/DataLastReviews";
 
 function News() {
@@ -19,9 +19,9 @@ function News() {
                     </div>
                     
                     <div className="post-right">
-                        <h1><span>As mais comentadas</span></h1>
+                        <h1><span>As mais visualizadas</span></h1>
 
-                        <DataTopComments />
+                        <DataTopViews />
 
                         <h1 className="post-title-separator"><span>Últimos reviews</span></h1>
 
