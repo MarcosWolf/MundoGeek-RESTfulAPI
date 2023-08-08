@@ -17,9 +17,10 @@ class TaskController {
     }
 
     visualizarPost(request, response) {
-        const id = request.params;
-        let query = `SELECT * FROM posts WHERE id =` + id;
-        database.query(query, (err, result) => {
+        const { id } = request.params;
+        console.log(`O ID é ${id}`);
+        let query = "SELECT * FROM posts WHERE id = ?";
+        database.query(query, [id], (err, result) => {
             if (err) {
                 console.log(err);
             } else {
