@@ -2,39 +2,52 @@ import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import Axios from 'axios';
 
+import { IPosts } from '../Models/IPosts';
 
-const Post = () => {
+interface IState {
+    loading: boolean,
+    getPost: IPosts[],
+    errorMsg: string
+}
+
+const Post:React.FC = () => {
 
     const { id } = useParams();
 
-    const [listNews, setListNews] = useState();
+    //const [listNews, setListNews] = useState();
+    const [state, setState] = useState<IState>({
+        loading: false,
+        getPost: [] as IPosts[],
+        errorMsg: ''
+    })
 
     useEffect(() => {
-//        Axios.get(`https://api-mundogeek.onrender.com/news/${id}`).then((response) => {
-        Axios.get(`https://192.168.0.2:3000/news/${id}`).then((response) => {
-            setListNews(response.data);
-            //console.log(setListNews);
-        });
-    }, []);
+        setState({...state, loading: true});
+
+        Axios.get(`https://api-mundogeek.onrender.com/news/${id}`)
+            .then((response) => setState({        
+                ...state, loading:false, getPost:response.data
+            }))
+            .catch(err => setState({
+                ...state, loading:false, errorMsg:err.message
+            }));
+        },[]);
+
+    const {getPost} = state;
 
     return (
         <>
-            <div className="manutencao">
-                {
-                    typeof listNews !== "undefined" && listNews.map(news => (
-                        <div key={news.id}>
-                            <img src={news.thumbnail}/>
-                            <h2>{news.title}</h2>
-                            <p>{news.category}</p>
-                            <p>{news.author}</p>
-                            <p>{news.date}</p>
-                            <p>{news.content}</p>
-                            
-                        </div>
-                    )
-                    )
-                }
-            </div>
+            {
+                getPost.length > 0 && getPost.map(post => (
+                    <div key={post.id}>
+                        <h2>{post.title}</h2>
+                        <img src={post.thumbnail}/>
+                        <p>{post.category}</p>
+                        <p>{post.author}</p>
+                        <p>{post.content}</p>
+                    </div>
+                ))
+            }
         </>
     );
 }
