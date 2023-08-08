@@ -14,7 +14,6 @@ const Post:React.FC = () => {
 
     const { id } = useParams();
 
-    //const [listNews, setListNews] = useState();
     const [state, setState] = useState<IState>({
         loading: false,
         getPost: [] as IPosts[],

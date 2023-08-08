@@ -1,46 +1,47 @@
 import {useState, useEffect} from "react";
-import { ILastNews } from "../Models/ILastNews";
-import { LastNewsServices } from "../Services/LastNewsServices";
 import { Link } from "react-router-dom";
+import Axios from 'axios';
+
+import { IPosts } from "../Models/IPosts";
 
 interface IState {
     loading: boolean,
-    lastNews: ILastNews[],
+    getPosts: IPosts[],
     errorMsg: string
 }
 
-const DataPosts:React.FC = () => {
+const DataLastNews:React.FC = () => {
     const [state, setState] = useState<IState>({
         loading: false,
-        lastNews: [] as ILastNews[],
+        getPosts: [] as IPosts[],
         errorMsg: ''
     })
 
     useEffect(() => {
         setState({...state, loading: true});
 
-        LastNewsServices.getAllLastNews()
-            .then(res => setState({
-                ...state, loading:false, lastNews:res.data
+        Axios.get(`https://api-mundogeek.onrender.com/lastnews/`)
+            .then((response) => setState({
+                ...state, loading:false, getPosts:response.data
             }))
             .catch(err => setState({
                 ...state, loading:false, errorMsg:err.message
             }));
     },[]);
 
-    const {lastNews} = state;
+    const {getPosts} = state;
 
     return (
         <>
             {
-                lastNews.length > 0 && lastNews.map( lastNew => (
-                    <div className="post-card">
+                getPosts.length > 0 && getPosts.map( post => (
+                    <div className="post-card" key={post.id}>
                         <div className="post-img">
-                            <Link to={lastNew.url}><img src={lastNew.img} /></Link>
+                            <Link to={"post/" + post.id}><img src={post.thumbnail} /></Link>
                         </div>
                         <div className="post-data">
-                            <Link to={lastNew.url}><h2>{lastNew.title}</h2></Link>
-                            <p>{lastNew.date}</p>
+                            <Link to={"post/" + post.id}><h2>{post.title}</h2></Link>
+                            <p>Data</p>
                         </div>
                     </div>
                 ))
@@ -49,4 +50,4 @@ const DataPosts:React.FC = () => {
     );
 }
 
-export default DataPosts
+export default DataLastNews;

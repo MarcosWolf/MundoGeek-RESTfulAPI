@@ -8,7 +8,6 @@ import App from "./App";
 
 import Home from "./routes/Home";
 import News from "./routes/News";
-import Review from "./routes/Review";
 import ErrorPage from './routes/ErrorPage';
 
 const router = createBrowserRouter([
@@ -22,13 +21,9 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/noticia/:id",
+        path: "/post/:id",
         element: <News />,
       },
-      {
-        path: "/review/:id",
-        element: <Review />,
-      }
     ],
   },
 ]);
