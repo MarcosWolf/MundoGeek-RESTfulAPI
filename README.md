@@ -41,7 +41,6 @@
 - [x] Construção do Layout
 - [x] Responsividade
 - [x] Comunicação com o Back-end
-- [ ] Shimmer Effect
 - [ ] Motor de busca
 - [ ] Paginação de resultados
 
