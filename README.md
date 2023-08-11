@@ -40,8 +40,9 @@
 ### Front-end
 - [x] Construção do Layout
 - [x] Responsividade
-- [x] Comunicação com o Back-end 
+- [x] Comunicação com o Back-end
 - [ ] Motor de busca
+- [ ] Paginação de resultados
 
 </div>
 
