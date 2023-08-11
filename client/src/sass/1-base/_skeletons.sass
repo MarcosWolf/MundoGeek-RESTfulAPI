@@ -1,0 +1,26 @@
+@use './variables'
+@use './_base-mixins'
+
+@keyframes shimmer
+    0%
+        background-position: 0% 0%
+    100%
+        background-position: -135% 0%
+
+
+.container-highlights
+    
+    animation: shimmer 1.2s ease-in-out infinite
+    display: block
+    
+    padding: 0 1rem
+    background: blue
+
+    @include base-mixins.desktop
+        max-width: 760px
+        height: auto
+        cursor: pointer
+
+    @include base-mixins.mobile-only
+        width: 100%
+        padding: 0 1rem

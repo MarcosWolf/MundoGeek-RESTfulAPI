@@ -36,10 +36,11 @@ const DataHighlights:React.FC = () => {
 
     return (
         <>
+
             {
                 getPosts.length > 0 && getPosts.map( post => (
                     <div className="highlights-card" key={post.postID}>
-                        <Link to={"post/" + post.postID}><img src={basePath + post.postTHUMBNAIL} /></Link>
+                    <Link to={"post/" + post.postID}><img src={(basePath + post.postTHUMBNAIL)} /></Link>
                         <h2>{post.categoryNAME}</h2>
                         <Link to={"post/" + post.postID}><p>{post.postTITLE}</p></Link>
                     </div>

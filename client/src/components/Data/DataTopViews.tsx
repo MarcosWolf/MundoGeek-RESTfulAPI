@@ -38,7 +38,7 @@ const DataTopViews:React.FC = () => {
         <>
             {
                 getPosts.length > 0 && getPosts.map( post => (
-                    <div className="feed-card">
+                    <div className="feed-card" key={post.postID}>
                         <div className="feed-img">
                             <Link to={"post/" + post.postID}><img src={basePath + post.postTHUMBNAIL} /></Link></div>
                         <div className="feed-data">
