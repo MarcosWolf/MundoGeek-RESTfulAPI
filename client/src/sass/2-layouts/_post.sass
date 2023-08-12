@@ -1,0 +1,69 @@
+@use './../1-base/variables'
+@use './../1-base/base-mixins'
+@use 'layouts-mixins'
+
+.post
+    margin-top: 4rem
+    width: 100%
+    text-align: center
+
+    @include base-mixins.mobile-only
+        margin-top: 1rem
+
+    .post-container
+        @include layouts-mixins.post-container
+        display: inline-block
+        align-items: center
+        flex-direction: column
+        padding: 0 1.5rem
+
+        @include base-mixins.mobile-only
+            padding: 1rem
+
+    .post-category
+        font-size: 1.8rem
+        text-transform: uppercase
+        color: variables.$primary-color
+        text-align: left
+
+    .post-title
+        font-size: 2.4rem
+        text-align: left
+
+    .post-subtitle
+        color: variables.$text-color
+        font-size: 1.5rem
+        font-weight: 300
+        margin-bottom: .4rem
+        text-align: left
+
+    .post-info
+        display: grid
+        grid-template-columns: auto auto .3fr 2fr
+        align-items: center
+        column-gap: 1rem
+        margin-bottom: 1rem
+        text-align: left
+
+        .post-portrait
+            width: 40px
+            border-radius: 30px
+
+        .post-datetime
+            font-size: 1rem
+            color: variables.$text-color
+
+    .post-image
+        max-height: 500px
+        border-radius: 30px
+        margin: 0 auto
+
+    .post-image-description
+        font-size: 1rem
+        text-align: center
+        margin-bottom: 2rem
+
+    .post-content
+        text-align: left
+        font-size: 1.7rem
+        font-weight: 300

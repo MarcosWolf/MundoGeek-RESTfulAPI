@@ -38,19 +38,26 @@ const Post:React.FC = () => {
     const {getPost} = state;
 
     return (
-        <>
+        <div className="post">
             {
                 getPost.length > 0 && getPost.map(post => (
-                    <div key={post.postID}>
-                        <h2>{post.postTITLE}</h2>
-                        <img src={basePath + post.postTHUMBNAIL}/>
-                        <p>{post.categoryNAME}</p>
-                        <p>{post.postAUTHOR}</p>
-                        <p>{post.postCONTENT}</p>
+                    <div className="post-container" key={post.postID}>
+                        <p className="post-category">{post.categoryNAME}</p>
+                        <h2 className="post-title">{post.postTITLE}</h2>
+                        <h3 className="post-subtitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                        <div className="post-info">
+                            <img className="post-portrait" src="https://avatars.githubusercontent.com/u/26293082?s=400&u=0082394880a1718cd9145af005c010b727915257&v=4"/>
+                            <p className="post-author">Publicado por <strong>Marcos Vinícios</strong></p>
+                            <hr/>
+                            <p className="post-datetime">12 de agosto de 2023 às 15:34</p>
+                        </div>
+                        <img className="post-image" src={basePath + post.postTHUMBNAIL}/>
+                        <p className="post-image-description">Image caption</p>
+                        <p className="post-content">{post.postCONTENT}</p>
                     </div>
                 ))
             }
-        </>
+        </div>
     );
 }
 
