@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
+import DOMPurify from "dompurify";
 import Axios from 'axios';
 
 import { IPosts } from '../Models/IPosts';
@@ -53,7 +54,7 @@ const Post:React.FC = () => {
                         </div>
                         <img className="post-image" src={basePath + post.postTHUMBNAIL}/>
                         <p className="post-image-description">Image caption</p>
-                        <p className="post-content">{post.postCONTENT}</p>
+                        <div className="post-content" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(post.postCONTENT)}} />
                     </div>
                 ))
             }
