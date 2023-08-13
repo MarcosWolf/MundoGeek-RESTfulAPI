@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { IPosts } from "../Models/IPosts";
 
+import { format } from "date-fns";
+
 const basePath = "/img/posts/";
 
 interface PostListProps {
@@ -20,7 +22,7 @@ const PostList: React.FC<PostListProps> = ({ posts }) => {
                     <div className="feed-data">
                         <Link to={"post/" + post.postID}>
                             <h2>{post.postTITLE}</h2>
-                            <p>Data</p>
+                            <p>{format(new Date(post.postDATE), 'dd/MM/yyyy')}</p>
                         </Link>
                     </div>
                 </div>
