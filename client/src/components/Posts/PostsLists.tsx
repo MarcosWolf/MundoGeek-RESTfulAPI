@@ -21,6 +21,7 @@ const PostList: React.FC<PostListProps> = ({ posts }) => {
                     </div>
                     <div className="feed-data">
                         <Link to={"post/" + post.postID}>
+                            <h3>{post.categoryNAME}</h3>
                             <h2>{post.postTITLE}</h2>
                             <p>{format(new Date(post.postDATE), 'dd/MM/yyyy')}</p>
                         </Link>
