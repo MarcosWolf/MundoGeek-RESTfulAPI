@@ -81,6 +81,8 @@
    Você pode visualizar o projeto através deste link: <br/>
    <a href="https://mundogeek.marcoswolf.com.br">https://mundogeek.marcoswolf.com.br</a>
    
+   PS: Caso estiver demorando para carregar, aguarde alguns segundos enquanto o Render inicia o serviço da API.
+   
 </div>
 
 <br />
