@@ -23,14 +23,18 @@ class TaskController {
     }
     
     visualizarUltimosPosts(request, response) {
+        const offset = Number(request.params.offset);
+        const limit = Number(request.params.limit);
+
+        console.log(`O Offset é: ${offset} e Limit: ${limit}`);
         let query = `SELECT *
                      FROM posts
                         INNER JOIN categories
                         ON posts.postCATEGORY = categories.categoryID
                     WHERE postHIGHLIGHT = 0
                     ORDER BY postID DESC
-                    LIMIT 0,10`;
-        database.query(query, (err, result) => {
+                    LIMIT ?,?`;
+        database.query(query, [offset, limit], (err, result) => {
             if (err) {
                 console.log(err);
             } else {
