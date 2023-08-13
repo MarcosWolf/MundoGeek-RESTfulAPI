@@ -3,6 +3,9 @@ import {useParams} from 'react-router-dom';
 import DOMPurify from "dompurify";
 import Axios from 'axios';
 
+import { format } from "date-fns";
+import ptBR from 'date-fns/locale/pt-BR'; // Importar a localização brasileira
+
 import { IPosts } from '../Models/IPosts';
 
 const basePath = "/img/posts/";
@@ -46,15 +49,16 @@ const Post:React.FC = () => {
                         <div className="post-container" key={post.postID}>
                             <p className="post-category">{post.categoryNAME}</p>
                             <h2 className="post-title">{post.postTITLE}</h2>
-                            <h3 className="post-subtitle">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                            <h3 className="post-subtitle">{post.postSUBTITLE}</h3>
                             <div className="post-info">
-                                <img className="post-portrait" src="https://avatars.githubusercontent.com/u/26293082?s=400&u=0082394880a1718cd9145af005c010b727915257&v=4"/>
-                                <p className="post-author">Publicado por <strong>Marcos Vinícios</strong></p>
+                                <img className="post-portrait" src={"/img/authors/" + post.authorIMAGE}/>
+                                <p className="post-author">Publicado por <strong>{post.authorNAME}</strong></p>
                                 <hr/>
-                                <p className="post-datetime">12 de agosto de 2023 às 15:34</p>
+                                <p className="post-datetime">{format(new Date(post.postDATE), "d 'de' MMMM 'de' yyyy 'às' HH:mm", { locale: ptBR })}</p>
+                                
                             </div>
                             <img className="post-image" src={basePath + post.postTHUMBNAIL}/>
-                            <p className="post-image-description">Image caption</p>
+                            <p className="post-image-description">{post.postCAPTION}</p>
                             <div className="post-content" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(post.postCONTENT)}} />
                         </div>
                     ))
