@@ -41,8 +41,9 @@
 - [x] Construção do Layout
 - [x] Responsividade
 - [x] Comunicação com o Back-end
+- [x] Paginação de resultados
+- [ ] Postagens com Markdown
 - [ ] Motor de busca
-- [ ] Paginação de resultados
 
 </div>
 
