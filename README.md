@@ -95,15 +95,15 @@
    
    - HTML5
    - Markdown
-   - [Sass](https://sass-lang.com)
-   - [React](https://pt-br.reactjs.org/)
-   - [Vite](https://vitejs.dev/)
-   - [TypeScript](https://www.typescriptlang.org/)
+   - Sass
+   - React
+   - Vite
+   - TypeScript
 
    ### Back-end
-   - [Node.js](https://nodejs.org)
-   - [Express](https://expressjs.com)
-   - [MySQL](https://mysql.com)
+   - Node.js
+   - Express
+   - MySQL
 
 </div>
 
