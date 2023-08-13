@@ -36,13 +36,15 @@
 ### Back-end
 - [x] API Restful com Node.js e Express
 - [x] Banco de Dados MySQL
+- [ ] Autenticação Administrativa
+- [ ] Editor de Postagens
 
 ### Front-end
 - [x] Construção do Layout
 - [x] Responsividade
 - [x] Comunicação com o Back-end
 - [x] Paginação de resultados
-- [x] Postagens com Markdown
+- [x] Postagens utilizando Markdown
 - [ ] Motor de busca
 
 </div>
@@ -92,6 +94,7 @@
    ### Front-end
    
    - HTML5
+   - Markdown
    - [Sass](https://sass-lang.com)
    - [React](https://pt-br.reactjs.org/)
    - [Vite](https://vitejs.dev/)
