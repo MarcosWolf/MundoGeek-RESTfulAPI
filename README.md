@@ -42,7 +42,7 @@
 - [x] Responsividade
 - [x] Comunicação com o Back-end
 - [x] Paginação de resultados
-- [ ] Postagens com Markdown
+- [x] Postagens com Markdown
 - [ ] Motor de busca
 
 </div>
@@ -64,7 +64,9 @@
   ## Web
 
 <p align="center">
-  <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/8a70fd40-0da8-4d93-a905-a25191c99e53" width="400px">
+  <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/aaa97e07-9b96-44c9-9cc7-ae45809afb43" width="400px">
+  <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/65c3bb18-942d-42f2-8474-b1655c6a28cc" width="400px">
+
 </p>
 
 
