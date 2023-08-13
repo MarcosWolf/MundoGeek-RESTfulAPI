@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
-import DOMPurify from "dompurify";
 import Axios from 'axios';
-
+import DOMPurify from "dompurify";
+import ReactMarkdown from 'react-markdown';
 import { format } from "date-fns";
 import ptBR from 'date-fns/locale/pt-BR'; // Importar a localização brasileira
 
@@ -59,14 +59,14 @@ const Post:React.FC = () => {
                             </div>
                             <img className="post-image" src={basePath + post.postTHUMBNAIL}/>
                             <p className="post-image-description">{post.postCAPTION}</p>
-                            <div className="post-content" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(post.postCONTENT)}} />
+                            <div className="post-content">
+                                <ReactMarkdown children={post.postCONTENT} />
+                                <ReactMarkdown>### Hey, este post foi produzido com ChatGPT para fim de demonstração do Projeto.</ReactMarkdown>
+                            </div>
+
                         </div>
                     ))
                 }
-            </div>
-
-            <div>
-                Veja mais
             </div>
         </>
     );
