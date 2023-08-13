@@ -1,4 +1,3 @@
-import DataLastNews from "../Data/DataLastNews";
 import DataTopViews from "../Data/DataTopViews";
 import DataLastReviews from "../Data/DataLastReviews";
 
@@ -11,11 +10,8 @@ function Feed() {
                     <div className="feed-left">
                         <h1><span>Últimas notícias</span></h1>
 
-                        <DataLastNews />
+                        <p>Em manutenção</p>
 
-                        <div className="feed-btn-container">
-                            <a href="#" className="feed-btn">Veja mais notícias</a>
-                        </div>
                     </div>
                     
                     <div className="feed-right">
