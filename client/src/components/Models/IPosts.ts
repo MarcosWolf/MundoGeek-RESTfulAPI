@@ -5,7 +5,6 @@ export interface IPosts {
     "postCATEGORY": string;
     "categoryNAME": string;
     "postTHUMBNAIL": string;
-    "postCAPTION": string;
     "postAUTHOR": string;
     "authorNAME": string;
     "authorIMAGE": string;
