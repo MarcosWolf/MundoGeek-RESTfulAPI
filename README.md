@@ -42,7 +42,7 @@
 - [x] Responsividade
 - [x] Comunicação com o Back-end
 - [x] Paginação de resultados
-- [ ] Postagens com Markdown
+- [x] Postagens com Markdown
 - [ ] Motor de busca
 
 </div>
