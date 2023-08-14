@@ -9,17 +9,18 @@
     @include base-mixins.mobile-only
         margin-top: 1rem
 
-h1:after
-    @include base-mixins.mobile-only
-        content:" "
-        display: inline-block
-        height: 1px
-        width: 100%
-        position: absolute
-        top: 50%
-        right: 0
-        background: variables.$primary-color
-        z-index: -1
+.feed
+    h1:after
+        @include base-mixins.mobile-only
+            content:" "
+            display: inline-block
+            height: 1px
+            width: 100%
+            position: absolute
+            top: 50%
+            right: 0
+            background: variables.$primary-color
+            z-index: -1
 
 .feed
     margin-top: 4rem

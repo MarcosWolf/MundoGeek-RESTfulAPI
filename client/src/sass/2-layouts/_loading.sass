@@ -4,11 +4,22 @@
 
 .loading-container
     height: 100vh
+    max-height: 100vh
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
     background-color: variables.$bg-color
+    animation: fade-in 3s
+    z-index: 9999
+    overflow-y: none
+    text-align: center
+
+    @include base-mixins.mobile-only
+        height: 100dvh
+        background-image: url('../public/img/assets/chess-pattern.jpg')
+        background-repeat: repeat
+        
 
     h1
         font-size: 1.4rem
@@ -24,6 +35,12 @@
     p
         color: variables.$text-color
         font-weight: 400
+
+@keyframes fade-in
+  from
+    opacity: 0
+  to
+    opacity: 100
 
 .error-message
     color: variables.$primary-color

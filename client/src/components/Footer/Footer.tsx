@@ -59,6 +59,20 @@ function Footer() {
                             </li>
                         </ul>
                     </div>
+                    <div className="footer-top-menu">
+                        <h3>Redes Sociais</h3>
+                        <ul>
+                            <li>
+                                <a href="#">Instagram</a>
+                            </li>
+                            <li>
+                                <a href="#">YouTube</a>
+                            </li>
+                            <li>
+                                <a href="#">Facebook</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div className="footer-bottom">
                     <p>2023 - Todos os Direitos Reservados</p>

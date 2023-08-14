@@ -5,6 +5,7 @@ import { faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 interface LoadingProps {
     showErrorMessage: boolean;
     message: string;
+    className?: string;
 }
 
 const Loading: React.FC<LoadingProps> = ({showErrorMessage, message}) => {
