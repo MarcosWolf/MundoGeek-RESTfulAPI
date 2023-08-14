@@ -36,13 +36,15 @@
 ### Back-end
 - [x] API Restful com Node.js e Express
 - [x] Banco de Dados MySQL
+- [ ] Autenticação Administrativa
+- [ ] Editor de Postagens
 
 ### Front-end
 - [x] Construção do Layout
 - [x] Responsividade
 - [x] Comunicação com o Back-end
 - [x] Paginação de resultados
-- [x] Postagens com Markdown
+- [x] Postagens utilizando Markdown
 - [ ] Motor de busca
 
 </div>
@@ -79,6 +81,8 @@
    Você pode visualizar o projeto através deste link: <br/>
    <a href="https://mundogeek.marcoswolf.com.br">https://mundogeek.marcoswolf.com.br</a>
    
+   PS: Caso estiver demorando para carregar, aguarde alguns segundos enquanto o Render inicia o serviço da API.
+   
 </div>
 
 <br />
@@ -92,15 +96,16 @@
    ### Front-end
    
    - HTML5
-   - [Sass](https://sass-lang.com)
-   - [React](https://pt-br.reactjs.org/)
-   - [Vite](https://vitejs.dev/)
-   - [TypeScript](https://www.typescriptlang.org/)
+   - Markdown
+   - Sass
+   - React
+   - Vite
+   - TypeScript
 
    ### Back-end
-   - [Node.js](https://nodejs.org)
-   - [Express](https://expressjs.com)
-   - [MySQL](https://mysql.com)
+   - Node.js
+   - Express
+   - MySQL
 
 </div>
 
