@@ -11,16 +11,23 @@ import Loading from './components/Loading/Loading';
 const App: React.FC = () => {
   const [data, setData] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [message, setMessage] = useState('Aguarde enquanto o Render inicializa a API...');
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://api-mundogeek.onrender.com/');
         setData(response.data);
+        console.log(data);
+        setIsLoading(false);
+        
       } catch (error) {
         console.error('Erro ao se comunicar com a API:', error);
-      } finally {
-        setIsLoading(false);
+        setTimeout(() => {
+          setShowErrorMessage(true);
+          setMessage('Ocorreu um erro ou a resposta está demorando demais para chegar.');
+        }, 25000)
       }
     }
 
@@ -30,7 +37,7 @@ const App: React.FC = () => {
   return (
     <>
       { isLoading ? (
-        <Loading />
+        <Loading showErrorMessage={showErrorMessage} message={message} />
       ) : (
         <>
           <Header />
