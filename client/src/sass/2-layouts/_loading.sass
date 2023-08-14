@@ -1,0 +1,29 @@
+@use './../1-base/variables'
+@use './../1-base/base-mixins'
+@use 'layouts-mixins'
+
+.loading-container
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: variables.$bg-color
+
+    h1
+        font-size: 1rem
+        color: variables.$white-color
+        margin-left: 2rem
+
+.loading-spinner
+    border: 4px solid rgba(0, 0, 0, 0.1)
+    border-left: 4px solid #000
+    border-radius: 50%
+    width: 40px
+    height: 40px
+    animation: spin 2s linear infinite
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
