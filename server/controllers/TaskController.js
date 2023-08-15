@@ -95,6 +95,24 @@ class TaskController {
         })
     }
 
+    // Tags
+    visualizarTags(request, response) {
+        const { id } = request.params;
+        console.log(`O ID é ${id}`);
+        let query = `SELECT t.tagNAME, t.tagID
+                     FROM tags t
+                         JOIN post_tags pt ON t.tagID = pt.tagID
+                     WHERE pt.postID = ?`;
+        database.query(query, [id], (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log({result});
+                response.send(result);
+            }
+        })
+    }
+
     // Posts relacionados
     visualizarPostsRelacionados(request, response) {
         const { id } = request.params;
