@@ -26,6 +26,8 @@ const Post:React.FC = () => {
 
     const { id } = useParams<{ id: string }>();
 
+    const [canRegisterView, setCanRegisterView] = useState(true);
+
     const [statePost, setStatePost] = useState<IStatePost>({
         loading: false,
         getPost: [] as IPosts[],
@@ -39,10 +41,28 @@ const Post:React.FC = () => {
 
     })
 
+    const registerView = async () => {
+        try {
+            const token = 'viewtoken';
+            await Axios.post(`http://192.168.0.8:3000/${id}/views`, {}, { headers: { Authorization: `Bearer ${token}` } });
+            setCanRegisterView(false);
+
+            setTimeout(() => {
+                setCanRegisterView(true);
+            }, 5 * 60 * 1000);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     useEffect(() => {
         window.scrollTo(0,0);
         setStatePost({...statePost, loading: true});
         setStateRelated({...stateRelated, loading: true});
+
+        if (canRegisterView) {
+            registerView();
+        }
 
         const fetchPost = async () => {
             try {
@@ -61,8 +81,8 @@ const Post:React.FC = () => {
 
         const fetchRelated = async () => {
             try {
-                //Axios.get(`https://api-mundogeek.onrender.com/relatedposts/${id}`)
-                Axios.get(`http://192.168.0.8:3000/relatedposts/${id}`)
+                //Axios.get(`http://192.168.0.8:3000/relatedposts/${id}`)
+                Axios.get(`https://api-mundogeek.onrender.com/relatedposts/${id}`)
                     .then((response) => setStateRelated({
                         ...stateRelated, loading:false, getRelated:response.data
                     }))
@@ -76,7 +96,7 @@ const Post:React.FC = () => {
 
         fetchPost();
         fetchRelated();
-    },[id]);
+    },[canRegisterView, id]);
 
     const {getPost} = statePost;
     const {getRelated} = stateRelated;

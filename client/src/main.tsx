@@ -7,6 +7,7 @@ import App from "./App";
 
 import HomeRoute from "./routes/HomeRoute";
 import PostRoute from "./routes/PostRoute";
+import TestRoute from './routes/TestRoute';
 import ErrorPageRoute from './routes/ErrorPageRoute';
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         path: "/post/:id",
         element: <PostRoute />,
       },
+      {
+        path: "/teste/",
+        element: <TestRoute />
+      }
     ],
   },
 ]);

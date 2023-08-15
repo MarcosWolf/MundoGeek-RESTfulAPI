@@ -18,6 +18,7 @@ const DataLastNews: React.FC = () => {
             //const response = await Axios.get(`http://192.168.0.2:3000/lastnews/${page}&10`);
             const response = await Axios.get(`https://api-mundogeek.onrender.com/lastnews/${page}&10`);
             const newPosts: IPosts[] = response.data;
+            setMessage("Carregar mais");
             setShowLoading(false);            
 
             if (newPosts.length === 0) {
