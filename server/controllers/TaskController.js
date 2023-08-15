@@ -7,8 +7,6 @@ class TaskController {
     visualizarDestaques(request, response) {
         let query = `SELECT *
         FROM posts
-           INNER JOIN categories ON posts.postCATEGORY = categories.categoryID
-           INNER JOIN authors ON posts.postAUTHOR = authors.authorID
         WHERE postHIGHLIGHT = 1
         ORDER BY postID DESC
         LIMIT 0,2`;
@@ -29,8 +27,6 @@ class TaskController {
         console.log(`O Offset é: ${offset} e Limit: ${limit}`);
         let query = `SELECT *
                      FROM posts
-                        INNER JOIN categories ON posts.postCATEGORY = categories.categoryID
-                        INNER JOIN authors ON posts.postAUTHOR = authors.authorID
                     WHERE postHIGHLIGHT = 0
                     ORDER BY postID DESC
                     LIMIT ?,?`;
@@ -47,8 +43,6 @@ class TaskController {
     visualizarTopViews(request, response) {
         let query = `SELECT *
                      FROM posts
-                        INNER JOIN categories ON posts.postCATEGORY = categories.categoryID
-                        INNER JOIN authors ON posts.postAUTHOR = authors.authorID
                     ORDER BY postID DESC
                     LIMIT 0,5`;
         database.query(query, (err, result) => {
@@ -64,8 +58,6 @@ class TaskController {
     visualizarUltimosReviews(request, response) {
         let query = `SELECT *
                      FROM posts
-                        INNER JOIN categories ON posts.postCATEGORY = categories.categoryID
-                        INNER JOIN authors ON posts.postAUTHOR = authors.authorID
                     WHERE postSECTION = 1
                     ORDER BY postID DESC
                     LIMIT 0,5`;
@@ -89,6 +81,23 @@ class TaskController {
                         INNER JOIN categories ON posts.postCATEGORY = categories.categoryID
                         INNER JOIN authors ON posts.postAUTHOR = authors.authorID
                      WHERE postID = ?`;
+        database.query(query, [id], (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log({result});
+                response.send(result);
+            }
+        })
+    }
+
+    // Posts relacionados
+    visualizarPostsRelacionados(request, response) {
+        const { id } = request.params;
+        let query = `SELECT t.tagNAME
+                    FROM tags T
+                    JOIN post_tags pt ON t.tagID = pt.tagID
+                    WHERE pt.postID = ?`;
         database.query(query, [id], (err, result) => {
             if (err) {
                 console.log(err);
