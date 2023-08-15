@@ -99,3 +99,42 @@
 
         img
             max-width: 50%
+
+.related
+    margin-top: 4rem
+    width: 100%
+    text-align: center
+
+    @include base-mixins.mobile-only
+        margin-top: 1rem
+
+    .related-container
+        @include layouts-mixins.post-container
+        display: flex
+        flex-direction: column
+        text-align: left
+
+        h1
+            font-size: 2rem
+            color: variables.$primary-color
+            margin-bottom: 1rem
+
+        .related-group
+            display: grid
+            grid-template-columns: 1fr 1fr 1fr
+            column-gap: 2rem
+
+            .related-card
+
+                h1
+                    font-size: 1.2rem
+                    color: variables.$white-color
+
+                h2
+                    font-size: 1.4rem
+                    text-transform: uppercase
+                    color: variables.$primary-color
+
+                img
+                    width: 100%
+                    margin-bottom: .5rem
