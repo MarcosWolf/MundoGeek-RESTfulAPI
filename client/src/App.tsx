@@ -9,7 +9,7 @@ import { Outlet } from "react-router-dom";
 import Loading from './components/Loading/Loading';
 
 const App: React.FC = () => {
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [message, setMessage] = useState('Aguarde enquanto o Render inicializa a API...');
   const [showErrorMessage, setShowErrorMessage] = useState(false);

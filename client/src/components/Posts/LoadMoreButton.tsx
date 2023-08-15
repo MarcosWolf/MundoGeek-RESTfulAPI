@@ -8,7 +8,6 @@ interface LoadMoreButtonProps {
 }
 
 const LoadMoreButton: React.FC<LoadMoreButtonProps> = ({ onClick, message, showLoading }) => {
-    console.log("Resultado é", showLoading);
     return <button className="feed-btn" onClick={onClick}>{showLoading ? <FontAwesomeIcon icon={faSpinner} spin /> : message}</button>;
 };
 

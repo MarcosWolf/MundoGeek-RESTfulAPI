@@ -7,12 +7,19 @@ import { format } from "date-fns";
 import ptBR from 'date-fns/locale/pt-BR'; // Importar a localização brasileira
 
 import { IPosts } from '../Models/IPosts';
+import { ITags } from '../Models/ITags';
 
 const basePath = "/img/posts/";
 
 interface IStatePost {
     loading: boolean,
     getPost: IPosts[],
+    errorMsg: string
+}
+
+interface IStateTags {
+    loading: boolean,
+    getTags: ITags[],
     errorMsg: string
 }
 
@@ -26,11 +33,15 @@ const Post:React.FC = () => {
 
     const { id } = useParams<{ id: string }>();
 
-    const [canRegisterView, setCanRegisterView] = useState(true);
-
     const [statePost, setStatePost] = useState<IStatePost>({
         loading: false,
         getPost: [] as IPosts[],
+        errorMsg: ''
+    })
+
+    const [stateTags, setStateTags] = useState<IStateTags>({
+        loading: false,
+        getTags: [] as ITags[],
         errorMsg: ''
     })
 
@@ -38,18 +49,12 @@ const Post:React.FC = () => {
         loading: false,
         getRelated: [] as IPosts[],
         errorMsg: ''
-
     })
 
     const registerView = async () => {
         try {
             //await Axios.post(`http://192.168.0.8:3000/${id}/views`,);
             await Axios.post(`https://api-mundogeek.onrender.com/${id}/views`,);
-            setCanRegisterView(false);
-
-            setTimeout(() => {
-                setCanRegisterView(true);
-            }, 5 * 60 * 1000);
         } catch (error) {
             console.error(error);
         }
@@ -58,11 +63,10 @@ const Post:React.FC = () => {
     useEffect(() => {
         window.scrollTo(0,0);
         setStatePost({...statePost, loading: true});
+        setStateTags({...stateTags, loading: true});
         setStateRelated({...stateRelated, loading: true});
 
-        if (canRegisterView) {
-            registerView();
-        }
+        registerView();
 
         const fetchPost = async () => {
             try {
@@ -76,6 +80,21 @@ const Post:React.FC = () => {
                     }));
             } catch (error) {
                 console.error('Erro ao buscar posts:', error);
+            }
+        }
+
+        const fetchTags = async () => {
+            try {
+                Axios.get(`http://192.168.0.8:3000/tags/${id}`)
+                //Axios.get(`https://api-mundogeek.onrender.com/relatedposts/${id}`)
+                    .then((response) => setStateTags({
+                        ...stateTags, loading: false, getTags:response.data
+                    }))
+                    .catch(err => setStateTags({
+                        ...stateTags, loading:false, errorMsg:err.message
+                    }));
+            } catch (error) {
+                console.error('Erro ao buscar posts relacionados:', error);
             }
         }
 
@@ -95,10 +114,12 @@ const Post:React.FC = () => {
         }
 
         fetchPost();
+        fetchTags();
         fetchRelated();
-    },[canRegisterView, id]);
+    },[id]);
 
     const {getPost} = statePost;
+    const {getTags} = stateTags;
     const {getRelated} = stateRelated;
 
     return (
@@ -126,6 +147,20 @@ const Post:React.FC = () => {
                         </div>
                     ))
                 }
+            </div>
+
+            <div className="tags">
+                <div className="tags-container">
+                    <div className="tags-group">
+                        {
+                            getTags.length > 0 && getTags.map(tag => (
+                                <div className="tag-card" key={tag.tagID}>
+                                    <Link to={"../tag/" + tag.tagID}>{tag.tagNAME}</Link>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
             </div>
 
             <div className="related">
