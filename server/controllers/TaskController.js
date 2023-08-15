@@ -96,10 +96,11 @@ class TaskController {
     // Posts relacionados
     visualizarPostsRelacionados(request, response) {
         const { id } = request.params;
-        let query = `SELECT DISTINCT p.postID, p.postTITLE, p.postTHUMBNAIL
+        let query = `SELECT DISTINCT p.postID, p.postTITLE, p.postTHUMBNAIL, c.categoryNAME
                     FROM posts p
                         JOIN post_tags pt ON p.postID = pt.postID
                         JOIN tags t ON pt.tagID = t.tagID
+                        INNER JOIN categories c ON p.postCATEGORY = c.categoryID
                     WHERE t.tagID IN (
                         SELECT tagID
                         FROM post_tags
@@ -107,7 +108,7 @@ class TaskController {
                         )
                     AND p.postID <> ?
                     ORDER BY p.postDATE DESC
-                    LIMIT 0,3`;
+                    LIMIT 0,6`;
         database.query(query, [id, id], (err, result) => {
             if (err) {
                 console.log(err);
