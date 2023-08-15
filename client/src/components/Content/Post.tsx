@@ -43,7 +43,8 @@ const Post:React.FC = () => {
 
     const registerView = async () => {
         try {
-            await Axios.post(`http://192.168.0.8:3000/${id}/views`,);
+            //await Axios.post(`http://192.168.0.8:3000/${id}/views`,);
+            await Axios.post(`https://api-mundogeek.onrender.com/${id}/views`,);
             setCanRegisterView(false);
 
             setTimeout(() => {

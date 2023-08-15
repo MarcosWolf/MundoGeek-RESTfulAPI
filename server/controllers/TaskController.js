@@ -43,10 +43,12 @@ class TaskController {
     }
 
     visualizarTopViews(request, response) {
-        let query = `SELECT *
-                     FROM posts
-                    ORDER BY postID DESC
-                    LIMIT 0,5`;
+        let query = `SELECT p.*, COUNT(v.postID) AS num_views
+                    FROM posts AS p
+                        LEFT JOIN post_views AS v ON p.postID = v.postID
+                    GROUP BY p.postID
+                    ORDER BY num_views DESC
+                    LIMIT 5;`;
         database.query(query, (err, result) => {
             if (err) {
                 console.log(err);
@@ -118,6 +120,39 @@ class TaskController {
             }
         })
     }
+
+
+
+
+    // Registro
+    async registrarVisualizacao(request, response) {
+        const { id } = request.params;
+
+        try {
+            await registerView(id);
+            return response.status(200).json({message: 'View registered'});
+        } catch (err) {
+            console.error(err);
+            return response.status(500).json({message: 'Error ocurred'});
+        }
+    }
 }
+
+const registerView = (id) => {
+    return new Promise((resolve, reject) => {
+        let query = `INSERT INTO
+                     post_views
+                        (postID)
+                     VALUES
+                        (?)`;
+        database.query(query, [id], (err, result) => {
+            if (err) {
+                reject(err);
+            } else {
+                resolve(result);
+            }
+        });
+    });
+};
 
 module.exports = new TaskController();
