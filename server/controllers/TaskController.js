@@ -7,6 +7,7 @@ class TaskController {
     visualizarDestaques(request, response) {
         let query = `SELECT *
         FROM posts
+        INNER JOIN categories ON posts.postCATEGORY = categories.categoryID
         WHERE postHIGHLIGHT = 1
         ORDER BY postID DESC
         LIMIT 0,2`;
@@ -27,6 +28,7 @@ class TaskController {
         console.log(`O Offset é: ${offset} e Limit: ${limit}`);
         let query = `SELECT *
                      FROM posts
+                     INNER JOIN categories ON posts.postCATEGORY = categories.categoryID
                     WHERE postHIGHLIGHT = 0
                     ORDER BY postID DESC
                     LIMIT ?,?`;
@@ -94,11 +96,19 @@ class TaskController {
     // Posts relacionados
     visualizarPostsRelacionados(request, response) {
         const { id } = request.params;
-        let query = `SELECT t.tagNAME
-                    FROM tags T
-                    JOIN post_tags pt ON t.tagID = pt.tagID
-                    WHERE pt.postID = ?`;
-        database.query(query, [id], (err, result) => {
+        let query = `SELECT DISTINCT p.postID, p.postTITLE, p.postTHUMBNAIL
+                    FROM posts p
+                        JOIN post_tags pt ON p.postID = pt.postID
+                        JOIN tags t ON pt.tagID = t.tagID
+                    WHERE t.tagID IN (
+                        SELECT tagID
+                        FROM post_tags
+                        WHERE postID = ?
+                        )
+                    AND p.postID <> ?
+                    ORDER BY p.postDATE DESC
+                    LIMIT 0,3`;
+        database.query(query, [id, id], (err, result) => {
             if (err) {
                 console.log(err);
             } else {
