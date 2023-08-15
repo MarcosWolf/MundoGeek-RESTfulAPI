@@ -22,8 +22,8 @@ const DataTopViews:React.FC = () => {
     useEffect(() => {
         setState({...state, loading: true});
 
-        //Axios.get(`http://192.168.0.2:3000/topviews/`)
-        Axios.get(`https://api-mundogeek.onrender.com/topviews/`)
+        Axios.get(`http://192.168.0.8:3000/topviews/`)
+        //Axios.get(`https://api-mundogeek.onrender.com/topviews/`)
             .then(res => setState({
                 ...state, loading:false, getPosts:res.data
             }))

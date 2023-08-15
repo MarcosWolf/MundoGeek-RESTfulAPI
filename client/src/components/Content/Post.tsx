@@ -43,8 +43,7 @@ const Post:React.FC = () => {
 
     const registerView = async () => {
         try {
-            const token = 'viewtoken';
-            await Axios.post(`http://192.168.0.8:3000/${id}/views`, {}, { headers: { Authorization: `Bearer ${token}` } });
+            await Axios.post(`http://192.168.0.8:3000/${id}/views`,);
             setCanRegisterView(false);
 
             setTimeout(() => {
