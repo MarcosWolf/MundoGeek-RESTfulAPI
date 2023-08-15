@@ -45,6 +45,7 @@
 - [x] Comunicação com o Back-end
 - [x] Paginação de resultados
 - [x] Postagens utilizando Markdown
+- [x] Listagem de posts relacionados
 - [ ] Motor de busca
 
 </div>
