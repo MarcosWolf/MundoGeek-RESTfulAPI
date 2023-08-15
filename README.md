@@ -45,6 +45,7 @@
 - [x] Comunicação com o Back-end
 - [x] Paginação de resultados
 - [x] Postagens utilizando Markdown
+- [x] Contador de Visualizações por Post 
 - [x] Listagem de posts relacionados
 - [ ] Motor de busca
 
