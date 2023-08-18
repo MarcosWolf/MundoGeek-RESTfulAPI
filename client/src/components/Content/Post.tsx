@@ -85,8 +85,8 @@ const Post:React.FC = () => {
 
         const fetchTags = async () => {
             try {
-                Axios.get(`http://192.168.0.8:3000/tags/${id}`)
-                //Axios.get(`https://api-mundogeek.onrender.com/relatedposts/${id}`)
+                //Axios.get(`http://192.168.0.8:3000/tags/${id}`)
+                Axios.get(`https://api-mundogeek.onrender.com/tags/${id}`)
                     .then((response) => setStateTags({
                         ...stateTags, loading: false, getTags:response.data
                     }))

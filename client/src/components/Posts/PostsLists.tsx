@@ -9,7 +9,7 @@ interface PostListProps {
     posts: IPosts[];
 }
 
-const PostList: React.FC<PostListProps> = ({ posts }) => {
+const PostList: React.FC<PostListProps> = ({ posts}) => {
     return (
         <>
             {posts.map(post => (

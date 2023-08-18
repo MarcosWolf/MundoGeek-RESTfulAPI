@@ -11,4 +11,5 @@ export interface IPosts {
     "postDATE": Date;
     "postCONTENT": string;
     "postSECTION": string;
+    "tagNAME": string;
 }

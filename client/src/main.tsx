@@ -7,7 +7,7 @@ import App from "./App";
 
 import HomeRoute from "./routes/HomeRoute";
 import PostRoute from "./routes/PostRoute";
-import CategoryRoute from './routes/CategoryRoute';
+import TagRoute from './routes/TagRoute';
 import ErrorPageRoute from './routes/ErrorPageRoute';
 
 const router = createBrowserRouter([
@@ -25,9 +25,9 @@ const router = createBrowserRouter([
         element: <PostRoute />,
       },
       {
-        path: "/category/:id",
-        element: <CategoryRoute />
-      }
+        path: "/tag/:id",
+        element: <TagRoute />,
+      },
     ],
   },
 ]);
