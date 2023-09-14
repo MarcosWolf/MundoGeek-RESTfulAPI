@@ -61,8 +61,8 @@
   
 <p align="center">
   <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/4944ba16-b851-4fb2-8b73-8bcd435c3df4" width="200px">
-
   <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/62097666-df9d-43b3-8143-01ef5f3041cb" width="200px">
+  <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/f2493c39-61c1-4e15-8f7b-fd2d1430d173" width="200px">
 </p>
 
   ## Web
