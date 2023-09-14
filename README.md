@@ -70,7 +70,7 @@
 <p align="center">
   <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/aaa97e07-9b96-44c9-9cc7-ae45809afb43" width="400px">
   <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/65c3bb18-942d-42f2-8474-b1655c6a28cc" width="400px">
-  <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/15eacfc0-21d6-485d-8d71-72070f951e45" width="400px">
+  <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/2255aac0-9292-4404-bf5e-91e708df0fe3" width="400px">
 </p>
 
 
