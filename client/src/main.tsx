@@ -8,6 +8,7 @@ import App from "./App";
 import HomeRoute from "./routes/HomeRoute";
 import PostRoute from "./routes/PostRoute";
 import TagRoute from './routes/TagRoute';
+import SearchRoute from "./routes/SearchRoute";
 import ErrorPageRoute from './routes/ErrorPageRoute';
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         path: "/tag/:id",
         element: <TagRoute />,
       },
+      {
+        path: "/search/:query",
+        element: <SearchRoute />,
+      }
     ],
   },
 ]);

@@ -85,7 +85,9 @@ const Tag: React.FC = () => {
                         
                         </>
                     ) : (
-                        <p>Carregando...</p>
+                        <>
+                            
+                        </>
                     )}
                     </div>
                 </div>
