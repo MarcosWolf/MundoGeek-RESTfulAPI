@@ -4,7 +4,6 @@ import Axios from 'axios';
 import DataLastNews from "../Data/DataLastNews";
 
 import { ITags } from "../Models/ITags";
-import { IPosts } from "../Models/IPosts";
 
 interface IStateTag {
     loading: boolean,
@@ -20,31 +19,6 @@ const Tag: React.FC = () => {
         getTag: [] as ITags[],
         errorMsg: ''
     });
-
-    const [posts, setPosts] = useState<IPosts[]>([]);
-    const [page, setPage] = useState<number>(0);
-    const [hasMore, setHasMore] = useState<boolean>(true);
-    const [message, setMessage] = useState('Carregar mais');
-    const [showLoading, setShowLoading] = useState(false);
-
-    const loadMorePosts = async () => {
-        setShowLoading(true);
-        try {
-            const response = await Axios.get(`https://api-mundogeek.onrender.com/tag/${id}/${page}&10`);
-            const newPosts: IPosts[] = response.data;
-            setMessage("Carregar mais");
-            setShowLoading(false);
-
-            if (newPosts.length === 0) {
-                setHasMore(false);
-            } else {
-                setPosts(prevPosts => [...prevPosts, ...newPosts]);
-                setPage(prevPage => prevPage + 10);
-            }
-        } catch (error) {
-            console.error('Error loading more posts: ', error);
-        }
-    };
 
     useEffect(() => {
         window.scrollTo(0,0);
@@ -66,8 +40,7 @@ const Tag: React.FC = () => {
         }
 
         fetchTag();
-        loadMorePosts();
-    }, []);
+        }, []);
 
     const { getTag } = stateTag;
 
