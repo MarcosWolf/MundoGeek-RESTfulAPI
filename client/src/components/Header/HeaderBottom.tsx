@@ -7,11 +7,11 @@ function HeaderBottom() {
                 <div className="header-bottom-container">
                     <nav className="nav-bar">
                         <ul>
-                            <li><Link to={"../tag/0"}>Filmes e TV</Link></li>
-                            <li><Link to={"../tag/1"}>Quadrinhos</Link></li>
-                            <li><Link to={"../tag/2"}>Otaku</Link></li>
-                            <li><Link to={"../tag/3"}>Jogos</Link></li>
-                            <li><Link to={"../tag/4"}>Tecnologia</Link></li>
+                            <Link to={"/tag/0"}><li>Filmes e TV</li></Link>
+                            <Link to={"/tag/1"}><li>Quadrinhos</li></Link>
+                            <Link to={"/tag/2"}><li>Otaku</li></Link>
+                            <Link to={"/tag/3"}><li>Jogos</li></Link>
+                            <Link to={"/tag/4"}><li>Tecnologia</li></Link>
                         </ul>
                     </nav>
                 </div>
