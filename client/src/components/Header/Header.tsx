@@ -11,7 +11,9 @@ function Header() {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        navigate(`/search/${query}`);
+        if (query.trim() !== '') {
+            navigate(`/search/${query}`);
+        }
     };
 
     return (

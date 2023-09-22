@@ -40,7 +40,7 @@ const Tag: React.FC = () => {
         }
 
         fetchTag();
-        }, []);
+        }, [id]);
 
     const { getTag } = stateTag;
 
@@ -51,9 +51,8 @@ const Tag: React.FC = () => {
                     <div className="feed-left">
                     {getTag && getTag.length > 0 ? (
                         <>
-                        <h1><span>{getTag[0].tagNAME}</span></h1>
-                        <DataLastNews tagID={getTag[0].tagID} />
-                        
+                            <h1><span>{getTag[0].tagNAME}</span></h1>
+                            <DataLastNews key={getTag[0].tagID} tagID={getTag[0].tagID} />
                         </>
                     ) : (
                         <>
