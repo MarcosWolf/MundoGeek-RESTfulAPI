@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import Axios from 'axios';
 import PostList from "../Posts/PostsLists";
 import LoadMoreButton from "../Posts/LoadMoreButton";
+import DataLastNews from "../Data/DataLastNews";
 
 import { ITags } from "../Models/ITags";
 import { IPosts } from "../Models/IPosts";
@@ -74,19 +75,14 @@ const Tag: React.FC = () => {
 
     return (
         <>
-
             <div className="feed">
                 <div className="feed-container">
                     <div className="feed-left">
                     {getTag && getTag.length > 0 ? (
                         <>
                         <h1><span>{getTag[0].tagNAME}</span></h1>
-                        <PostList posts={posts} />
-                        {hasMore && (
-                            <div className="feed-btn-container">
-                            <LoadMoreButton message={message} onClick={loadMorePosts} showLoading={showLoading} />
-                            </div>
-                        )}
+                        <DataLastNews tagID={getTag[0].tagID} />
+                        
                         </>
                     ) : (
                         <p>Carregando...</p>
