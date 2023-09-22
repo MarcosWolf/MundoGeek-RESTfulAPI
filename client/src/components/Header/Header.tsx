@@ -1,6 +1,19 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Header() {
+    const [query, setQuery] = useState('');
+    const navigate = useNavigate();
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setQuery(event.target.value);
+    };
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        navigate(`/search/${query}`);
+    };
+
     return (
         <div>
             <header id="mainHeader" className="header">
@@ -11,8 +24,8 @@ function Header() {
 
                     <i id="btnSearch" className="fa-solid fa-magnifying-glass"></i>
 
-                    <form className="header-form">
-                        <input type="text" placeholder="O que deseja buscar?" />
+                    <form className="header-form" action="/search" method="GET" onSubmit={handleSubmit}>
+                        <input type="text" name="query" placeholder="O que deseja buscar?" value={query} onChange={handleInputChange} autoComplete='off' />
                         <button type="submit"> <i className="fa-solid fa-magnifying-glass"></i></button>
                     </form>
 
