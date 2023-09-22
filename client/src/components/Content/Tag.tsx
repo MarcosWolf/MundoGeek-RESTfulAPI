@@ -4,10 +4,23 @@ import Axios from 'axios';
 import PostList from "../Posts/PostsLists";
 import LoadMoreButton from "../Posts/LoadMoreButton";
 
+import { ITags } from "../Models/ITags";
 import { IPosts } from "../Models/IPosts";
+
+interface IStateTag {
+    loading: boolean,
+    getTag: ITags[],
+    errorMsg: string
+}
 
 const Tag: React.FC = () => {
     const { id } = useParams<{ id: string }>();
+
+    const [stateTag, setStateTag] = useState<IStateTag>({
+        loading: false,
+        getTag: [] as ITags[],
+        errorMsg: ''
+    });
 
     const [posts, setPosts] = useState<IPosts[]>([]);
     const [page, setPage] = useState<number>(0);
@@ -35,21 +48,49 @@ const Tag: React.FC = () => {
     };
 
     useEffect(() => {
+        window.scrollTo(0,0);
+
+        setStateTag({...stateTag, loading: true});
+
+        const fetchTag = async () => {
+            try {
+                Axios.get(`http://192.168.0.4:3000/tagname/${id}`)
+                    .then((response) => setStateTag({
+                        ...stateTag, loading: false, getTag:response.data
+                    }))
+                    .catch(err => setStateTag({
+                        ...stateTag, loading:false, errorMsg:err.message
+                    }));
+            } catch (error) {
+                console.error('Erro ao buscar tags relacionadas:', error);
+            }
+        }
+
+        fetchTag();
         loadMorePosts();
     }, []);
 
+    const { getTag } = stateTag;
+
     return (
         <>
+
             <div className="feed">
                 <div className="feed-container">
                     <div className="feed-left">
-                        <h1><span>Últimas notícias</span></h1>
+                    {getTag && getTag.length > 0 ? (
+                        <>
+                        <h1><span>{getTag[0].tagNAME}</span></h1>
                         <PostList posts={posts} />
-                        { hasMore &&
+                        {hasMore && (
                             <div className="feed-btn-container">
-                                <LoadMoreButton message={message} onClick={loadMorePosts} showLoading={showLoading} />
+                            <LoadMoreButton message={message} onClick={loadMorePosts} showLoading={showLoading} />
                             </div>
-                        }
+                        )}
+                        </>
+                    ) : (
+                        <p>Carregando...</p>
+                    )}
                     </div>
                 </div>
             </div>
