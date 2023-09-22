@@ -24,23 +24,41 @@ class TaskController {
     visualizarUltimosPosts(request, response) {
         const offset = Number(request.params.offset);
         const limit = Number(request.params.limit);
-
-        console.log(`O Offset é: ${offset} e Limit: ${limit}`);
-        let query = `SELECT *
-                     FROM posts
-                     INNER JOIN categories ON posts.postCATEGORY = categories.categoryID
-                    WHERE postHIGHLIGHT = 0
-                    ORDER BY postID DESC
-                    LIMIT ?,?`;
-        database.query(query, [offset, limit], (err, result) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log({result});
-                response.send(result);
-            }
+        const tagID = request.params.tagID ? Number(request.params.tagID) : null;
+      
+        console.log(`Offset: ${offset}, Limit: ${limit}, TagID: ${tagID}`);
+      
+        let query = `
+          SELECT *
+          FROM posts`;
+      
+        if (tagID !== null && !isNaN(tagID)) {
+          // Use EXISTS para verificar a existência de registros na tabela post_tags
+          query += `
+            WHERE EXISTS (
+              SELECT 1
+              FROM post_tags
+              WHERE post_tags.postID = posts.postID AND post_tags.tagID = ?
+            )`;
+        } else {
+            query += `
+                WHERE postHIGHLIGHT = 0`;
+        }
+      
+        query += ` ORDER BY postID DESC LIMIT ?,?`;
+      
+        const queryParams = tagID !== null && !isNaN(tagID) ? [tagID, offset, limit] : [offset, limit];
+      
+        database.query(query, queryParams, (err, result) => {
+          if (err) {
+            console.error(err);
+            response.status(500).send(`Erro ao buscar posts: ${err.message}`);
+          } else {
+            console.log({ result });
+            response.send(result);
+          }
         });
-    }
+      }
 
     visualizarTopViews(request, response) {
         let query = `SELECT p.*, COUNT(v.postID) AS num_views
@@ -74,7 +92,6 @@ class TaskController {
             }
         });
     }
-
 
     // Post
     visualizarPost(request, response) {
@@ -113,6 +130,28 @@ class TaskController {
         })
     }
 
+    visualizarTagPosts(request, response) {
+        const { id } = request.params;
+        const offset = Number(request.params.offset);
+        const limit = Number(request.params.limit);
+
+        let query = `SELECT *
+                     FROM posts p
+                        JOIN post_tags pt ON p.postID = pt.postID
+                        JOIN tags t ON pt.tagID = t.tagID
+                    WHERE t.tagID = ?
+                    ORDER BY p.postDATE DESC
+                    LIMIT ?,?`;
+        database.query(query, [id, offset, limit], (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log({result});
+                response.send(result);
+            }
+        })
+    }
+
     // Posts relacionados
     visualizarPostsRelacionados(request, response) {
         const { id } = request.params;
@@ -139,8 +178,20 @@ class TaskController {
         })
     }
 
-
-
+    visualizarTagNome(request, response) {
+        const { id } = request.params;
+        let query = `SELECT *
+                    FROM tags t
+                    WHERE t.tagID = ?`;
+        database.query(query, [id], (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log({result});
+                response.send(result);
+            }
+        })
+    }
 
     // Registro
     async registrarVisualizacao(request, response) {
