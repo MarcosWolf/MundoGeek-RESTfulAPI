@@ -17,8 +17,7 @@ const DataLastNews: React.FC<DataLastNewsProps> = ({ tagID }) => {
     const [showLoading, setShowLoading] = useState(false);
 
     const buildAxiosUrl = () => {
-        //let url = "https://api-mundogeek.onrender.com/lastnews/";
-        let url = "http://192.168.0.4:3000/lastnews/";
+        let url = "https://api-mundogeek.onrender.com/lastnews/";
 
         // Adicione a página atual à URL
         url += `${page}&10`;
