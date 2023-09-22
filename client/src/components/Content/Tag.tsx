@@ -1,8 +1,6 @@
 import {useState, useEffect} from "react";
 import {useParams} from 'react-router-dom';
 import Axios from 'axios';
-import PostList from "../Posts/PostsLists";
-import LoadMoreButton from "../Posts/LoadMoreButton";
 import DataLastNews from "../Data/DataLastNews";
 
 import { ITags } from "../Models/ITags";
@@ -32,7 +30,7 @@ const Tag: React.FC = () => {
     const loadMorePosts = async () => {
         setShowLoading(true);
         try {
-            const response = await Axios.get(`http://192.168.0.8:3000/tag/${id}/${page}&10`);
+            const response = await Axios.get(`https://api-mundogeek.onrender.com/tag/${id}/${page}&10`);
             const newPosts: IPosts[] = response.data;
             setMessage("Carregar mais");
             setShowLoading(false);
@@ -55,7 +53,7 @@ const Tag: React.FC = () => {
 
         const fetchTag = async () => {
             try {
-                Axios.get(`http://192.168.0.4:3000/tagname/${id}`)
+                Axios.get(`https://api-mundogeek.onrender.com/tagname/${id}`)
                     .then((response) => setStateTag({
                         ...stateTag, loading: false, getTag:response.data
                     }))
