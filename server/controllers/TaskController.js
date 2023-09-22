@@ -54,8 +54,11 @@ class TaskController {
             console.error(err);
             response.status(500).send(`Erro ao buscar posts: ${err.message}`);
           } else {
-            console.log({ result });
-            response.send(result);
+            if (result.length === 0) {
+                response.status(404).json({ mensagem: "Nenhum post foi encontrado." });
+            } else {
+                response.send(result);
+            }
           }
         });
       }
