@@ -18,19 +18,13 @@ const DataLastNews: React.FC<DataLastNewsProps> = ({ tagID }) => {
     const [error404, setError404] = useState<boolean>(false);
 
     const buildAxiosUrl = () => {
-        //let url = "https://api-mundogeek.onrender.com/lastnews/";
-        let url = "http://192.168.0.4:3000/lastnews/";
-
-        // Adicione a página atual à URL
+        let url = "https://api-mundogeek.onrender.com/lastnews/";
         url += `${page}&10`;
-    
-        // Se um tagID for fornecido, adicione-o à URL
         
         if (tagID !== null) {
           url += `/${tagID}/`;
         }
         
-        console.log(url);
         return url;
       };
 
@@ -38,14 +32,6 @@ const DataLastNews: React.FC<DataLastNewsProps> = ({ tagID }) => {
         setShowLoading(true);
         try {
           const response = await Axios.get(buildAxiosUrl());
-      
-          if (response.status === 404) {
-            // Lidar com erro 404 aqui, por exemplo:
-            setError404(true);
-            setMessage("Tag não encontrada");
-            setShowLoading(false);
-            return;
-          }
       
           const newPosts: IPosts[] = response.data;
           setMessage("Carregar mais");
