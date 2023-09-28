@@ -10,7 +10,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "host": "vite --host",
-    "test": "jest"
+    "test": "jest",
+    "test:cov": "jest --coverage"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
@@ -53,6 +54,9 @@
     "testEnvironment": "jest-environment-jsdom",
     "setupFilesAfterEnv": [
       "<rootDir>/setup-tests.js"
+    ],
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.{js,ts,jsx,tsx}"
     ]
   }
 }
