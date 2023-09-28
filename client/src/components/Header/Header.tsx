@@ -27,7 +27,7 @@ function Header() {
                     <i id="btnSearch" className="fa-solid fa-magnifying-glass"></i>
 
                     <form className="header-form" action="/search" method="GET" onSubmit={handleSubmit}>
-                        <input type="text" name="query" placeholder="O que deseja buscar?" value={query} onChange={handleInputChange} autoComplete='off' />
+                        <input type="text" data-testid="query" name="query" placeholder="O que deseja buscar?" value={query} onChange={handleInputChange} autoComplete='off' />
                         <button type="submit"> <i className="fa-solid fa-magnifying-glass"></i></button>
                     </form>
 
