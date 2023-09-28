@@ -19,7 +19,7 @@ const Search: React.FC = () => {
         setError404(false);
 
         try {
-            const response = await Axios.get(`https://api-mundogeek.onrender.com/${page}&10/${query}`);
+            const response = await Axios.get(`https://api-mundogeek.onrender.com/search/${page}&10/${query}`);
 
             const newPosts: IPosts[] = response.data;
             setShowLoading(false);
