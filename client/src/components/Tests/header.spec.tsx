@@ -1,11 +1,11 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import '@testing-library/jest-dom';
-import { BrowserRouter } from "react-router-dom"; // Importe BrowserRouter
-import Header from "../Header/Header"; // Importe o componente Header
+import { BrowserRouter } from "react-router-dom";
+import Header from "../Header/Header";
+import HeaderBottom from "../Header/HeaderBottom";
 
-describe('Logo', () => {
-    it("should render correctly", () => {
+describe('Header', () => {
+    test("should render correctly", () => {
         render(
             <BrowserRouter>
                 <Header />
@@ -14,4 +14,33 @@ describe('Logo', () => {
 
         expect(screen.getByText("Mundo . Geek")).toBeInTheDocument();
     });
+
+    test("should check search input", () => {
+        render(
+            <BrowserRouter>
+                <Header />
+            </BrowserRouter>
+        );
+
+        const input = screen.getByTestId('query') as HTMLInputElement;
+        expect(input).toBeInTheDocument();
+        fireEvent.change(input, {  target: { value: 'Texto de pesquisa' } });
+        expect(input.value).toBe('Texto de pesquisa');
+    });
+});
+
+describe("HeaderBottom", () => {
+    test("should render correctly", () => {
+        render(
+            <BrowserRouter>
+                <HeaderBottom />
+            </BrowserRouter>
+        );
+
+        expect(screen.getByText('Filmes e TV'));
+        expect(screen.getByText('Quadrinhos'));
+        expect(screen.getByText('Otaku'));
+        expect(screen.getByText('Jogos'));
+        expect(screen.getByText('Tecnologia'));
+    })
 });
