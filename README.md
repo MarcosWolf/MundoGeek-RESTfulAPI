@@ -1,10 +1,12 @@
-<h1 align="center">
-    <img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/257a230c-74fb-4b2b-a444-f0a9d040dc6d" />
-</h1>
+<div>
+	<img src="https://github.com/MarcosWolf/mundogeek/assets/26293082/257a230c-74fb-4b2b-a444-f0a9d040dc6d" />
+	<br />
+</div>
 
-<h4 align="center"> 
-	🚧  Blog 🚧
-</h4>
+<p align="center"> 
+	<br />
+	Blog de notícias
+</p>
 
 <p align="center">
  <a href="#objetivo">Objetivo</a> • 
@@ -122,7 +124,7 @@
 
 <br />
 
-<div id="tecnologias">
+<div id="bancodedados">
    
    ## 🎲 Banco de Dados
 
