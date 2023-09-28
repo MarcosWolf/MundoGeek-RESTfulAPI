@@ -3,11 +3,10 @@ import {useParams} from 'react-router-dom';
 import Axios from 'axios';
 import PostList from "../Posts/PostsLists";
 import LoadMoreButton from "../Posts/LoadMoreButton";
-
 import { IPosts } from "../Models/IPosts";
 
 const Search: React.FC = () => {
-    const { query: currentQuery } = useParams<{ query: string | undefined }>();
+    const { query } = useParams<{ query: string }>();
     const [posts, setPosts] = useState<IPosts[]>([]);
     const [page, setPage] = useState<number>(0);
     const [hasMore, setHasMore] = useState<boolean>(true);
@@ -15,77 +14,72 @@ const Search: React.FC = () => {
     const [showLoading, setShowLoading] = useState(false);
     const [error404, setError404] = useState<boolean>(false);
 
-    const buildAxiosUrl = () => {
-        //let url = "https://api-mundogeek.onrender.com/search/";
-        let url = "http://192.168.0.4:3000/search/";
+    const loadPosts = async (page: number) => {
+        try {
+            const response = await Axios.get(`http://192.168.0.2:3000/search/${page}&10/${query}`);
 
-        url += `${page}&10`;
+            const newPosts: IPosts[] = response.data;
+            setMessage("Carregar maisena");
+            setShowLoading(false);
 
-        if (currentQuery) {
-            url += `/${currentQuery}`;
-          }
-      
-        return url;
-    }
-
-    const loadMorePosts = async () => {
-      setShowLoading(true);
-      try {
-          const response = await Axios.get(buildAxiosUrl());
-  
-          const newPosts: IPosts[] = response.data;
-          setMessage("Carregar mais");
-          setShowLoading(false);
-  
-          if (newPosts.length === 0) {
-              setHasMore(false);
-          } else {
-            setPosts((prevPosts) => [...prevPosts, ...newPosts]);
-
-            if (!currentQuery) {
-                setPage((prevPage) => prevPage + 10);
+            if (newPosts.length === 0) {
+                setHasMore(false);
+            } else {
+                setPosts((prevPosts) => [...prevPosts, ...newPosts]);
             }
-          }
-      } catch (error: any) {
-          console.error("Error loading more posts: ", error);
-          if (error.response && error.response.status === 404) {
-              setError404(true);
-              setMessage("Desculpe, não encontrei posts relacionados.");
-              setShowLoading(false);
-          }
-      }
-  };
+        } catch (error: any) {
+            if (error.response && error.response.status === 404) {
+                setError404(true);
+                setMessage("Desculpe, não encontrei posts relacionados.");
+                setShowLoading(false);
+            }
+        }
+    };
 
-  useEffect(() => {
-    // Reseta o estado da página apenas quando uma nova busca é iniciada
-    if (currentQuery) {
-        setPosts([]);
+    useEffect(() => {
+        setPosts([]); // Limpar os posts ao iniciar uma nova pesquisa
         setPage(0);
-        setHasMore(true); // Reinicia a flag para permitir carregar mais
-    }
-    loadMorePosts();
-}, [currentQuery, page]);
+        setHasMore(true);
+        console.log(hasMore);
+        loadPosts(0);
+    }, [query]);
+
+    const loadMorePosts = () => {
+        const nextPage = page + 10;
+        loadPosts(nextPage);
+        setPage(nextPage);
+        setShowLoading(true);
+    };
 
     return (
         <>
             <div className="feed">
                 <div className="feed-container">
                     <div className="feed-left">
-                        <h1><span>Buscando por "{currentQuery}"</span></h1>
+                        <h1><span>Buscando por "{query}"</span></h1>
                         <PostList posts={posts || []} />
                         {error404 ? (
-                            <h3>{message}</h3>
+                            <>
+                                <h3>{message}</h3>
+                            </>
                         ) : (
                             <>
-                            {hasMore && (
-                                <div className="feed-btn-container">
-                                <LoadMoreButton
-                                    message={message}
-                                    onClick={loadMorePosts}
-                                    showLoading={showLoading}
-                                />
-                                </div>
-                            )}
+
+                                {hasMore ? (
+                                    <div className="feed-btn-container">
+                                        <LoadMoreButton
+                                            message="CARREGAR MAIS teste"
+                                            onClick={loadMorePosts}
+                                            showLoading={showLoading}
+                                        />
+                                    </div>
+                                ) : (
+                                    posts.length === 0 ? (
+                                        <div className="feed-btn-container">
+                                            <h3>Desculpe, não encontrei posts relacionados.</h3>
+                                        </div>
+                                    ) : null
+                                )}
                             </>
                         )}
                     </div>
