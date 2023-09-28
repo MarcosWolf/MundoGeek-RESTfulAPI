@@ -1,5 +1,5 @@
-import {useState, useEffect} from "react";
-import {useParams} from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { useParams } from 'react-router-dom';
 import Axios from 'axios';
 import PostList from "../Posts/PostsLists";
 import LoadMoreButton from "../Posts/LoadMoreButton";
@@ -9,23 +9,28 @@ const Search: React.FC = () => {
     const { query } = useParams<{ query: string }>();
     const [posts, setPosts] = useState<IPosts[]>([]);
     const [page, setPage] = useState<number>(0);
-    const [hasMore, setHasMore] = useState<boolean>(true);
     const [message, setMessage] = useState('Carregar mais');
     const [showLoading, setShowLoading] = useState(false);
     const [error404, setError404] = useState<boolean>(false);
+    const [showLoadMoreButton, setShowLoadMoreButton] = useState(true);
 
     const loadPosts = async (page: number) => {
+        setShowLoading(true);
+        setError404(false);
+
         try {
-            const response = await Axios.get(`http://192.168.0.2:3000/search/${page}&10/${query}`);
+            const response = await Axios.get(`https://api-mundogeek.onrender.com/${page}&10/${query}`);
 
             const newPosts: IPosts[] = response.data;
-            setMessage("Carregar maisena");
             setShowLoading(false);
 
             if (newPosts.length === 0) {
-                setHasMore(false);
+                setMessage("Desculpe, não encontrei posts relacionados.");
+                setShowLoadMoreButton(false);
             } else {
                 setPosts((prevPosts) => [...prevPosts, ...newPosts]);
+                setMessage("Carregar mais");
+                setShowLoadMoreButton(true);
             }
         } catch (error: any) {
             if (error.response && error.response.status === 404) {
@@ -37,10 +42,9 @@ const Search: React.FC = () => {
     };
 
     useEffect(() => {
-        setPosts([]); // Limpar os posts ao iniciar uma nova pesquisa
+        setPosts([]);
         setPage(0);
-        setHasMore(true);
-        console.log(hasMore);
+        setShowLoadMoreButton(true);
         loadPosts(0);
     }, [query]);
 
@@ -63,24 +67,15 @@ const Search: React.FC = () => {
                                 <h3>{message}</h3>
                             </>
                         ) : (
-                            <>
-
-                                {hasMore ? (
-                                    <div className="feed-btn-container">
-                                        <LoadMoreButton
-                                            message="CARREGAR MAIS teste"
-                                            onClick={loadMorePosts}
-                                            showLoading={showLoading}
-                                        />
-                                    </div>
-                                ) : (
-                                    posts.length === 0 ? (
-                                        <div className="feed-btn-container">
-                                            <h3>Desculpe, não encontrei posts relacionados.</h3>
-                                        </div>
-                                    ) : null
-                                )}
-                            </>
+                            showLoadMoreButton && (
+                                <div className="feed-btn-container">
+                                    <LoadMoreButton
+                                        message={message}
+                                        onClick={loadMorePosts}
+                                        showLoading={showLoading}
+                                    />
+                                </div>
+                            )
                         )}
                     </div>
                 </div>
