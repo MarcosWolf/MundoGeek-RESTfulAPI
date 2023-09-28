@@ -33,6 +33,7 @@
 <div id="funcionalidades">
 
 ## 📝 Funcionalidades
+
 ### Back-end
 - [x] API Restful com Node.js e Express
 - [x] Banco de Dados MySQL
@@ -48,6 +49,9 @@
 - [x] Contador de Visualizações por Post 
 - [x] Listagem de posts relacionados
 - [x] Motor de busca
+
+### QA
+- [X] Implementação de testes com Jest e Testing-library
 
 </div>
 
@@ -95,6 +99,11 @@
    
    As seguintes ferramentas foram usadas na construção do projeto:
 
+   ### Back-end
+   - Node.js
+   - Express
+   - MySQL
+
    ### Front-end
    
    - HTML5
@@ -104,10 +113,10 @@
    - Vite
    - TypeScript
 
-   ### Back-end
-   - Node.js
-   - Express
-   - MySQL
+   ### QA
+
+   - Jest
+   - Testing-library
 
 </div>
 
