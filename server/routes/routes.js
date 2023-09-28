@@ -13,6 +13,7 @@ router.get('/tags/:id', TaskController.visualizarTags);
 router.get('/tag/:id/:offset&:limit', TaskController.visualizarTagPosts);
 router.get('/tagname/:id', TaskController.visualizarTagNome);
 router.get('/relatedposts/:id', TaskController.visualizarPostsRelacionados);
+router.get('/search/:offset&:limit/:content', TaskController.pesquisarPosts);
 
 //Post
 router.post('/:id/views/', TaskController.registrarVisualizacao);

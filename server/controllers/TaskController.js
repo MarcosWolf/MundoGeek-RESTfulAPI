@@ -56,6 +56,7 @@ class TaskController {
           } else {
             if (result.length === 0) {
                 response.status(404).json({ mensagem: "Nenhum post foi encontrado." });
+                console.log("Erro 404");
             } else {
                 response.send(result);
             }
@@ -194,6 +195,37 @@ class TaskController {
                 response.send(result);
             }
         })
+    }
+
+    pesquisarPosts(request, response) {
+        const { content } = request.params;
+        const offset = Number(request.params.offset);
+        const limit = Number(request.params.limit);
+
+        const words = content.split(" ");
+        const wordsLike = words.map(word => `%${word}%`);
+
+        const queryLike = wordsLike.join(" ");
+        console.log("Consulta ficou assim: " + queryLike);
+
+        let query = `SELECT *
+                    FROM posts p
+                    WHERE postCONTENT LIKE ?
+                    ORDER BY p.postDATE DESC
+                    LIMIT ?,?`;
+        database.query(query, [queryLike, offset, limit], (err, result) => {
+            if (err) {
+                console.error(err);
+                response.status(500).send(`Erro ao buscar posts: ${err.message}`);
+            } else {
+                if (result.length === 0) {
+                    response.status(404).json({ mensagem: "Nenhum post foi encontrado." });
+                    console.log("Erro 404");
+                } else {
+                    response.send(result);
+                }
+            }
+        });
     }
 
     // Registro
