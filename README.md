@@ -54,6 +54,7 @@
 
 ### QA
 - [X] Implementação de testes com Jest e Testing-library
+- [ ] Testes com Selenium WebDriver
 
 </div>
 
