@@ -2,6 +2,8 @@ import {useState, useEffect} from "react";
 import {useParams} from 'react-router-dom';
 import Axios from 'axios';
 import DataLastNews from "../Data/DataLastNews";
+import DataTopViews from "../Data/DataTopViews";
+import DataLastReviews from "../Data/DataLastReviews";
 
 import { ITags } from "../Models/ITags";
 
@@ -59,6 +61,15 @@ const Tag: React.FC = () => {
                             
                         </>
                     )}
+                    </div>
+                    <div className="feed-right">
+                        <h1><span>As mais visualizadas</span></h1>
+
+                        <DataTopViews />
+
+                        <h1 className="feed-title-separator"><span>Últimos reviews</span></h1>
+
+                        <DataLastReviews />
                     </div>
                 </div>
             </div>

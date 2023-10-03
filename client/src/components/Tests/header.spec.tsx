@@ -24,6 +24,27 @@ describe('Header', () => {
 
         const input = screen.getByTestId('query') as HTMLInputElement;
         expect(input).toBeInTheDocument();
+    });
+
+    test("should start with empty field", () => {
+        render(
+            <BrowserRouter>
+                <Header />
+            </BrowserRouter>
+        );
+
+        const input = screen.getByTestId('query') as HTMLInputElement;
+        expect(input.value).toBe('');
+    });
+
+    test("should fill the search input", () => {
+        render(
+            <BrowserRouter>
+                <Header />
+            </BrowserRouter>
+        );
+
+        const input = screen.getByTestId('query') as HTMLInputElement;
         fireEvent.change(input, {  target: { value: 'Texto de pesquisa' } });
         expect(input.value).toBe('Texto de pesquisa');
     });
