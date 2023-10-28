@@ -1,4 +1,4 @@
-# MundoGeek-RESTfulAPI
+# MundoGeek-RestfulAPI
 
 Desenvolvimento de um site de notícias Geek com uma arquitetura RESTful API, utilizando React para o frontend, Node.Js para o backend e MySQL para o banco de dados.
 
