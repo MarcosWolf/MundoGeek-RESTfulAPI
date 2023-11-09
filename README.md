@@ -39,8 +39,6 @@ PS: Caso estiver demorando para carregar, aguarde alguns segundos enquanto o Ren
 ### Back-end
 - [x] API Restful com Node.js e Express
 - [x] Banco de Dados MySQL
-- [ ] Autenticação Administrativa
-- [ ] Editor de Postagens
 
 ### Front-end
 - [x] Construção do Layout
