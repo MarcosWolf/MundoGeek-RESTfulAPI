@@ -1,12 +1,9 @@
-
-import Feed from '../components/Content/Feed';
-import Highlights from '../components/Content/Highlights';
+import { Home } from "../pages/Home";
 
 const HomeRoute = () => {
     return (
         <>
-            <Highlights />
-            <Feed />
+            <Home />
         </>
     );
 }
