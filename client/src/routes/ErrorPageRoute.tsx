@@ -1,8 +1,8 @@
+import { Error } from "../pages/Error";
+
 const ErrorPageRoute = () => {
     return (
-        <>
-            <h1>Erro 404</h1>
-        </>
+        <Error />
     );
 }
 

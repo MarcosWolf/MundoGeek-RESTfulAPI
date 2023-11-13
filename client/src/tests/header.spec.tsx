@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import { BrowserRouter } from "react-router-dom";
-import Header from "../Header/Header";
-import HeaderBottom from "../Header/HeaderBottom";
+import Header from "../components/content/Header/Header";
+import HeaderBottom from "../components/content/Header/HeaderBottom";
 
 describe('Header', () => {
     test("should render correctly", () => {

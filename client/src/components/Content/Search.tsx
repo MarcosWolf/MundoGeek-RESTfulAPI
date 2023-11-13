@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Axios from 'axios';
 import PostList from "../Posts/PostsLists";
 import LoadMoreButton from "../Posts/LoadMoreButton";
-import { IPosts } from "../Models/IPosts";
+import { IPosts } from "../interfaces/IPosts";
 
 const Search: React.FC = () => {
     const { query } = useParams<{ query: string }>();

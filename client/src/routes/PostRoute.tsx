@@ -1,4 +1,4 @@
-import Post from "../components/Content/Post";
+import { Post } from "../pages/Post";
 
 const PostRoute = () => {
 

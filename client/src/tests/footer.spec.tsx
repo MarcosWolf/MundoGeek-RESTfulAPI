@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
 import { BrowserRouter } from "react-router-dom";
-import Footer from "../Footer/Footer";
+import Footer from "../components/content/Footer/Footer";
 
 describe('Footer', () => {
     test("should render correctly", () => {

@@ -1,4 +1,4 @@
-import Search from "../components/Content/Search";
+import { Search } from "../pages/Search";
 
 function SearchRoute() {
     return (
