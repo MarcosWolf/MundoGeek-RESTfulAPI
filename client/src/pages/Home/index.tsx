@@ -1,11 +1,10 @@
-import Highlights from "../../components/Content/Highlights";
-import Feed
- from "../../components/Content/Feed";
+import { Highlights } from "../../components/content/Highlights";
+
 export const Home = () => {
     return (
         <>
             <Highlights />
-            <Feed />
+            
         </>
     );
 }

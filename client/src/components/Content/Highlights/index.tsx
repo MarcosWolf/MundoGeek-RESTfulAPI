@@ -1,16 +1,14 @@
-import DataHighlights from "../Data/DataHighlights";
+import { HighlightsData } from "./HighlightsData";
 
-function Highlights() {
+export const Highlights = () => {
 
     return (
         <div>
             <div className="highlights">
                 <div className="highlights-container">
-                    <DataHighlights />
+                    <HighlightsData />
                 </div>
             </div>
         </div>
     );
 }
-
-export default Highlights

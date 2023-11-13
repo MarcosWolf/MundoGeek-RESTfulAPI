@@ -2,7 +2,7 @@ import {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import Axios from 'axios';
 
-import { IPosts } from "../Models/IPosts";
+import { IPosts } from "../interfaces/IPosts";
 
 const basePath = "/img/posts/";
 

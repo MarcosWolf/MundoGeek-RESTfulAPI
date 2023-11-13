@@ -3,7 +3,7 @@ import Axios from 'axios';
 import PostList from "../Posts/PostsLists";
 import LoadMoreButton from "../Posts/LoadMoreButton";
 
-import { IPosts } from "../Models/IPosts";
+import { IPosts } from "../interfaces/IPosts";
 
 interface DataLastNewsProps {
     tagID?: number;

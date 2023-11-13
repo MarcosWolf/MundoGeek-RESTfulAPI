@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { IPosts } from "../Models/IPosts";
+import { IPosts } from "../interfaces/IPosts";
 import { format } from "date-fns";
 
 const basePath = "/img/posts/";
