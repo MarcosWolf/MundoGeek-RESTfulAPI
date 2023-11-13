@@ -1,8 +1,7 @@
 import DataLastNews from "../Data/DataLastNews";
-import DataTopViews from "../Data/DataTopViews";
 import DataLastReviews from "../Data/DataLastReviews";
 
-function Feed() {
+function FeedOld() {
     return (
         <div>
             <div className="feed">
@@ -18,7 +17,7 @@ function Feed() {
                     <div className="feed-right">
                         <h1><span>As mais visualizadas</span></h1>
 
-                        <DataTopViews />
+                        
 
                         <h1 className="feed-title-separator"><span>Últimos reviews</span></h1>
 
@@ -30,4 +29,4 @@ function Feed() {
     );
 }
 
-export default Feed
+export default FeedOld;
